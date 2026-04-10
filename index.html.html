@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paolla & Paulo \u2014 13.07.2026</title>
+  <title>Paolla & Paulo — 13.07.2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;500&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;500&family=Great+Vibes&family=Pinyon+Script&display=swap" rel="stylesheet">
   <style>
     :root {
       --marrom:        #130706;
@@ -21,7 +21,7 @@
     html { scroll-behavior: smooth; }
     body { background: var(--branco); color: var(--marrom); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
 
-    /* \u2500\u2500 HERO \u2500\u2500 */
+    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       background: var(--marrom);
@@ -38,7 +38,7 @@
       pointer-events: none;
     }
 
-    /* Serra dos \u00d3rg\u00e3os silhouette \u2014 hero bottom */
+    /* Serra dos Órgãos SVG — full bottom strip */
     .serra-hero {
       position: absolute;
       bottom: 0; left: 0; right: 0;
@@ -49,57 +49,60 @@
 
     .hero-content { position: relative; z-index: 2; padding-bottom: clamp(200px,34vw,360px); }
 
+    /* Monograma PP */
     .monogram {
-      font-family: 'The Nautigal', cursive;
-      font-size: clamp(52px, 9vw, 76px);
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(38px, 7vw, 58px);
       color: var(--dourado);
       opacity: 0.85;
       line-height: 1;
       margin-bottom: 18px;
-      animation: fadeUp 1s 0.2s both;
+      opacity: 0; animation: fadeUp 1s 0.2s forwards;
     }
 
     .hero-pre {
       font-family: 'Cinzel', serif; font-size: clamp(9px,1.8vw,11px);
       letter-spacing: 0.45em; color: var(--dourado); text-transform: uppercase;
-      margin-bottom: 24px; animation: fadeUp 1s 0.4s both;
+      margin-bottom: 24px; opacity: 0; animation: fadeUp 1s 0.4s forwards;
     }
 
+    /* Names in Pinyon Script like the save the date */
     .hero-names {
-      font-family: 'The Nautigal', cursive;
-      font-size: clamp(80px, 17vw, 168px);
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(72px, 16vw, 158px);
       font-weight: 400;
       line-height: 0.85;
       color: #ffffff;
-      animation: fadeUp 1.2s 0.6s both;
+      opacity: 0; animation: fadeUp 1.2s 0.6s forwards;
     }
     .hero-names .connector {
-      font-family: 'The Nautigal', cursive;
-      font-size: clamp(42px, 9vw, 84px);
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(38px, 8vw, 76px);
       color: var(--dourado);
       display: block;
       line-height: 1.1;
+      letter-spacing: 0.05em;
     }
     .hero-rule {
       width: 1px; height: 64px;
       background: linear-gradient(to bottom, transparent, var(--dourado), transparent);
-      margin: 28px auto; animation: fadeIn 1s 1.2s both;
+      margin: 28px auto; opacity: 0; animation: fadeIn 1s 1.2s forwards;
     }
     .hero-date {
       font-family: 'Cinzel', serif; font-size: clamp(12px,2.2vw,17px);
       letter-spacing: 0.3em; color: var(--dourado-claro);
-      animation: fadeUp 1s 1.4s both;
+      opacity: 0; animation: fadeUp 1s 1.4s forwards;
     }
     .hero-loc {
       font-size: clamp(12px,1.8vw,15px); font-style: italic;
       color: rgba(243,235,224,0.45); margin-top: 10px;
-      animation: fadeUp 1s 1.6s both;
+      opacity: 0; animation: fadeUp 1s 1.6s forwards;
     }
     .hero-verse {
       margin-top: 32px; font-size: clamp(11px,1.6vw,13px);
       font-style: italic; color: rgba(201,169,110,0.5);
       max-width: 440px; line-height: 1.8;
-      animation: fadeUp 1s 1.9s both;
+      opacity: 0; animation: fadeUp 1s 1.9s forwards;
     }
     .scroll-hint {
       position: absolute; bottom: 22px; left: 50%;
@@ -107,7 +110,7 @@
       animation: bounce 2.2s infinite; z-index: 3;
     }
 
-    /* \u2500\u2500 NAV \u2500\u2500 */
+    /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(19,7,6,0.97); backdrop-filter: blur(10px);
@@ -117,7 +120,7 @@
     nav a { font-family: 'Cinzel', serif; font-size: 9.5px; letter-spacing: 0.22em; color: var(--dourado-claro); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
     nav a:hover { color: var(--dourado); }
 
-    /* \u2500\u2500 SHARED SECTION STYLES \u2500\u2500 */
+    /* ── SHARED SECTION STYLES ── */
     section { padding: clamp(64px,10vw,116px) clamp(24px,8vw,100px); }
     .sec-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.4em; color: var(--marrom-claro); text-transform: uppercase; text-align: center; margin-bottom: 14px; }
     .sec-title { font-size: clamp(34px,5.5vw,58px); font-weight: 300; text-align: center; color: var(--marrom); line-height: 1.1; margin-bottom: 40px; }
@@ -127,7 +130,7 @@
     .ornament::after { background: linear-gradient(to left, transparent, var(--dourado)); }
     .ornament span { color: var(--dourado); font-size: 17px; opacity: 0.65; }
 
-    /* \u2500\u2500 CONTAGEM \u2500\u2500 */
+    /* ── CONTAGEM ── */
     #contagem { background: var(--creme); text-align: center; }
     .cd-grid { display: flex; justify-content: center; gap: clamp(12px,5vw,56px); flex-wrap: wrap; }
     .cd-item { display: flex; flex-direction: column; align-items: center; }
@@ -135,35 +138,46 @@
     .cd-lbl { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.32em; color: var(--marrom-claro); text-transform: uppercase; margin-top: 6px; }
     .cd-sep { font-size: clamp(36px,6vw,64px); color: var(--dourado); opacity: 0.35; line-height: 1; align-self: flex-start; padding-top: 8px; }
 
-    /* \u2500\u2500 HIST\u00d3RIA \u2500\u2500 */
+    /* ── HISTÓRIA ── */
     #historia { background: var(--branco); }
     .hist-text { font-size: clamp(17px,2.4vw,21px); line-height: 1.95; color: var(--marrom); text-align: center; font-style: italic; max-width: 700px; margin: 0 auto; opacity: 0.82; }
 
-    /* \u2500\u2500 VENUE / CASA \u2500\u2500 */
+    /* ── CASA (venue illustration) ── */
     #venue {
       background: var(--creme);
       text-align: center;
       padding: clamp(48px,8vw,96px) clamp(24px,8vw,100px);
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
-    .venue-house-img {
-      max-width: min(600px, 100%);
-      margin: 0 auto 28px;
-      display: block;
-      /* Tint to match the site's brown palette */
-      filter: sepia(0.6) saturate(0.8) hue-rotate(330deg) brightness(0.88);
-      opacity: 0.82;
+    .venue-illustration {
+      max-width: 680px;
+      margin: 0 auto 32px;
+      opacity: 0.88;
+    }
+    /* The house SVG rendered from the save the date illustration */
+    .venue-svg-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .venue-svg-wrap img {
+      max-width: min(680px, 100%);
+      filter: sepia(1) saturate(0.6) hue-rotate(330deg) brightness(0.85);
+      opacity: 0.75;
+      border: none;
     }
 
-    /* \u2500\u2500 PROGRAMA\u00c7\u00c3O \u2500\u2500 */
+    /* ── PROGRAMAÇÃO ── */
     #cerimonia {
       background: var(--marrom); color: var(--creme); text-align: center;
       position: relative; overflow: hidden;
     }
+    /* Serra dos Órgãos silhouette at bottom of cerimonia section */
     .serra-cerimonia {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: clamp(120px, 22vw, 240px);
+      height: clamp(100px, 18vw, 180px);
       pointer-events: none;
     }
     #cerimonia .sec-label { color: var(--dourado); opacity: 0.7; }
@@ -181,7 +195,7 @@
     .tl-title { font-size: clamp(18px,3vw,22px); font-weight: 300; color: var(--creme); }
     .tl-sub { font-size: 13px; font-style: italic; color: rgba(243,235,224,0.45); margin-top: 2px; }
 
-    /* \u2500\u2500 TRAJE \u2500\u2500 */
+    /* ── TRAJE ── */
     #traje { background: var(--creme); text-align: center; }
     .traje-grid { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
     .traje-card { border: 1px solid var(--creme-escuro); background: var(--branco); padding: 36px 28px; max-width: 280px; flex: 1; min-width: 220px; }
@@ -190,83 +204,16 @@
     .traje-desc { font-size: 16px; font-style: italic; color: var(--marrom); line-height: 1.75; }
     .traje-obs { margin-top: 32px; font-size: 15px; font-style: italic; color: var(--marrom-claro); max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.6; }
 
-    /* \u2500\u2500 PRESENTES \u2500\u2500 */
+    /* ── PRESENTES ── */
     #presentes { background: var(--branco); text-align: center; }
-    .presentes-intro { font-size: clamp(16px,2.2vw,19px); font-style: italic; color: var(--marrom); line-height: 1.85; max-width: 560px; margin: 0 auto 48px; opacity: 0.82; }
+    .presentes-intro { font-size: clamp(16px,2.2vw,19px); font-style: italic; color: var(--marrom); line-height: 1.85; max-width: 560px; margin: 0 auto 40px; opacity: 0.82; }
+    .presentes-grid { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+    .presente-btn { display: inline-block; border: 1px solid var(--creme-escuro); padding: 22px 32px; text-decoration: none; transition: all 0.3s; min-width: 190px; cursor: pointer; background: transparent; }
+    .presente-btn:hover { background: var(--creme); border-color: var(--dourado); }
+    .presente-faixa { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.28em; color: var(--dourado); text-transform: uppercase; margin-bottom: 6px; }
+    .presente-valor { font-size: clamp(18px,2.8vw,24px); font-weight: 300; color: var(--marrom); }
 
-    /* Accordion tiers */
-    .accordion-wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
-
-    .acc-tier {
-      border: 1px solid var(--creme-escuro);
-      background: var(--branco);
-      overflow: hidden;
-      transition: box-shadow 0.3s;
-    }
-    .acc-tier:hover { box-shadow: 0 4px 24px rgba(19,7,6,0.06); }
-
-    .acc-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 30px; cursor: pointer;
-      user-select: none;
-      transition: background 0.25s;
-    }
-    .acc-header:hover { background: var(--creme); }
-
-    .acc-tier-label {
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.32em;
-      text-transform: uppercase; color: var(--dourado); margin-bottom: 4px;
-    }
-    .acc-tier-range {
-      font-size: clamp(20px,3vw,26px); font-weight: 300; color: var(--marrom); line-height: 1;
-    }
-    .acc-arrow {
-      color: var(--dourado); font-size: 18px;
-      transition: transform 0.35s; flex-shrink: 0; margin-left: 16px;
-    }
-    .acc-tier.open .acc-arrow { transform: rotate(180deg); }
-
-    .acc-body {
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);
-      border-top: 0px solid transparent;
-    }
-    .acc-tier.open .acc-body {
-      max-height: 2400px;
-      border-top: 1px solid var(--creme-escuro);
-    }
-    .acc-body-inner { padding: 28px 30px 36px; text-align: left; }
-
-    /* Category inside accordion */
-    .gift-category { margin-bottom: 30px; }
-    .gift-category:last-child { margin-bottom: 0; }
-    .gift-cat-title {
-      font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--marrom-claro);
-      margin-bottom: 14px; padding-bottom: 6px;
-      border-bottom: 1px solid var(--creme-escuro);
-    }
-    .gift-item { margin-bottom: 18px; }
-    .gift-item:last-child { margin-bottom: 0; }
-    .gift-name {
-      font-size: clamp(15px,2vw,17px); font-weight: 400; color: var(--marrom);
-      margin-bottom: 6px;
-    }
-    .gift-links { display: flex; flex-wrap: wrap; gap: 8px; }
-    .gift-link {
-      display: inline-block;
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--marrom-claro);
-      text-decoration: none;
-      border: 1px solid var(--creme-escuro);
-      padding: 5px 12px;
-      transition: all 0.25s;
-    }
-    .gift-link:hover {
-      background: var(--creme); border-color: var(--dourado); color: var(--marrom);
-    }
-
-    /* \u2500\u2500 CONFIRMA\u00c7\u00c3O \u2500\u2500 */
+    /* ── CONFIRMAÇÃO ── */
     #confirmacao { background: var(--creme); text-align: center; }
     .rsvp-whats { font-size: clamp(15px,2vw,18px); font-style: italic; color: var(--marrom-claro); margin-bottom: 28px; line-height: 1.7; }
     .whats-btn {
@@ -278,7 +225,7 @@
     }
     .whats-btn:hover { opacity: 0.7; }
 
-    /* \u2500\u2500 LOCAL \u2500\u2500 */
+    /* ── LOCAL ── */
     #local { background: var(--marrom); color: var(--creme); text-align: center; }
     #local .sec-label { color: var(--dourado); opacity: 0.7; }
     #local .sec-title { color: var(--creme); }
@@ -290,14 +237,14 @@
     .map-link { display: inline-block; margin-top: 20px; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--dourado); text-decoration: none; border-bottom: 1px solid rgba(201,169,110,0.35); padding-bottom: 2px; transition: opacity 0.3s; }
     .map-link:hover { opacity: 0.65; }
 
-    /* \u2500\u2500 FOOTER \u2500\u2500 */
+    /* ── FOOTER ── */
     footer { background: var(--marrom); border-top: 1px solid rgba(201,169,110,0.1); text-align: center; padding: 52px 24px; }
-    .footer-mono { font-family: 'The Nautigal', cursive; font-size: clamp(36px,6vw,58px); color: var(--dourado); margin-bottom: 8px; }
-    .footer-names { font-family: 'The Nautigal', cursive; font-size: clamp(32px,5.5vw,50px); font-weight: 400; color: rgba(232,212,168,0.7); margin-bottom: 10px; }
+    .footer-mono { font-family: 'Pinyon Script', cursive; font-size: clamp(32px,6vw,52px); color: var(--dourado); margin-bottom: 8px; }
+    .footer-names { font-family: 'Pinyon Script', cursive; font-size: clamp(28px,5vw,44px); font-weight: 400; color: rgba(232,212,168,0.7); margin-bottom: 10px; }
     .footer-sub { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.28em; color: rgba(243,235,224,0.3); }
     .footer-verse { margin-top: 24px; font-size: 13px; font-style: italic; color: rgba(201,169,110,0.3); max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.65; }
 
-    /* \u2500\u2500 ANIMATIONS \u2500\u2500 */
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
     @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
     @keyframes bounce { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(7px); } }
@@ -307,213 +254,414 @@
 </head>
 <body>
 
-<!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 HERO \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->
+<!-- ══════════ HERO ══════════ -->
 <section id="hero">
   <div class="hero-content">
+    <!-- Monogram PP in script -->
     <div class="monogram">PP</div>
-    <p class="hero-pre">Celebra\u00e7\u00e3o do Matrim\u00f4nio</p>
+    <p class="hero-pre">Celebração do Matrimônio</p>
     <h1 class="hero-names">
       Paolla
       <span class="connector">e</span>
       Paulo
     </h1>
     <div class="hero-rule"></div>
-    <p class="hero-date">13 \u00b7 07 \u00b7 2026</p>
-    <p class="hero-loc">Casa Ville Verte \u00b7 Teres\u00f3polis, RJ</p>
+    <p class="hero-date">13 · 07 · 2026</p>
+    <p class="hero-loc">Casa Ville Verte · Teresópolis, RJ</p>
     <p class="hero-verse">
       "Para que todos vejam, e saibam, e considerem, e juntamente entendam<br>
-      que a m\u00e3o do Senhor fez isto..." \u2014 Isa\u00edas 41:20
+      que a mão do Senhor fez isto..." — Isaías 41:20
     </p>
   </div>
 
-  <!--
-    Serra dos \u00d3rg\u00e3os silhouette \u2014 based on the uploaded reference illustration.
-    Dedo de Deus is the tall central spire. Rendered as a golden-tinted silhouette.
-  -->
+  <!-- Serra dos Órgãos silhouette — detailed, based on the illustration reference -->
   <svg class="serra-hero" viewBox="0 0 1440 380" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.32"/>
-        <stop offset="100%" stop-color="#C9A96E" stop-opacity="0.05"/>
+      <linearGradient id="serraGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.28"/>
+        <stop offset="100%" stop-color="#C9A96E" stop-opacity="0.06"/>
       </linearGradient>
-      <linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.18"/>
-        <stop offset="100%" stop-color="#C9A96E" stop-opacity="0.04"/>
+      <linearGradient id="serraGrad2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.14"/>
+        <stop offset="100%" stop-color="#C9A96E" stop-opacity="0.03"/>
       </linearGradient>
+      <!-- Hatching pattern like the illustration -->
+      <pattern id="hatch" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="4" stroke="#C9A96E" stroke-width="0.5" stroke-opacity="0.25"/>
+      </pattern>
     </defs>
 
-    <!-- Distant back ridge -->
-    <path fill="url(#sg2)"
-      d="M0,380 L0,295
-         C80,285 120,268 155,248
-         C172,238 178,222 184,216
-         C190,222 198,238 212,252
-         C232,268 258,278 290,272
-         C318,267 338,252 352,238
-         C360,244 370,258 386,270
-         C408,282 438,286 468,278
-         C492,272 512,255 526,240
-         C534,246 545,260 562,272
-         C584,284 614,288 644,280
-         C668,274 686,258 700,244
-         C708,250 720,264 738,276
-         C762,288 796,292 828,284
-         C854,278 872,262 886,248
-         C894,254 908,268 928,278
-         C954,290 988,294 1020,286
-         C1046,280 1064,264 1078,250
-         C1086,256 1098,270 1118,280
-         C1144,292 1178,296 1212,288
-         C1238,282 1256,266 1270,252
-         C1278,258 1292,272 1314,280
-         C1346,290 1392,284 1440,268
+    <!-- Background distant ridge -->
+    <path fill="url(#serraGrad2)"
+      d="M0,380 L0,280
+         Q60,270 100,255 Q130,245 150,230
+         Q165,218 175,210 Q180,205 184,208 Q188,212 193,220
+         Q200,232 212,245 Q228,258 250,265
+         Q275,272 300,268 Q320,264 335,255
+         Q348,246 356,236 Q362,228 367,232
+         Q372,237 380,248 Q392,262 410,270
+         Q435,278 465,274 Q490,270 510,260
+         Q530,250 545,238 Q558,228 566,232
+         Q574,237 585,250 Q600,268 622,275
+         Q650,282 680,276 Q705,270 725,258
+         Q742,248 752,240 Q758,244 768,255
+         Q782,270 800,278 Q825,285 855,280
+         Q885,275 905,262 Q920,252 928,244
+         Q934,248 944,260 Q958,275 978,282
+         Q1005,290 1035,284 Q1060,278 1078,265
+         Q1092,255 1098,248 Q1104,252 1114,264
+         Q1128,280 1148,287 Q1172,294 1198,288
+         Q1222,282 1240,268 Q1254,258 1262,250
+         Q1268,254 1278,266 Q1294,282 1316,288
+         Q1345,294 1380,286 Q1415,278 1440,264
          L1440,380 Z"/>
 
-    <!-- Main mountain silhouette with Dedo de Deus peaks -->
-    <path fill="url(#sg1)"
-      d="M0,380 L0,318
-         C18,312 30,305 42,298
-         C50,293 55,298 62,306
-         C72,316 86,322 104,318
-         C118,314 128,304 136,294
-         C142,300 150,312 162,320
-         C176,328 196,330 216,322
-         C230,316 240,304 246,294
-         C252,300 262,314 276,322
-         C294,330 318,330 340,320
-         C356,312 366,300 372,290
-         C378,296 390,310 406,318
-         C424,326 448,326 470,316
-         C484,308 492,296 498,286
-
-         C500,280 502,268 504,254
-         C505,240 506,224 507,208
-         C508,192 509,174 510,156
-         C511,140 512,124 513,110
-         C514,98 515,88 516,80
-         C517,72 518,64 519,58
-         C520,52 521,46 522,42
-         C523,38 524,34 525,32
-         C526,30 527,28 528,28
-         C529,28 530,30 531,32
-         C532,35 533,40 534,46
-         C535,53 536,62 537,72
-         C538,84 539,96 540,110
-         C541,126 542,142 543,158
-         C544,174 545,190 546,206
-         C547,222 548,238 549,252
-         C550,266 551,278 552,288
-         C554,296 556,304 558,310
-
-         C566,300 574,288 580,278
-         C586,284 596,298 610,308
-         C628,318 650,322 672,314
-         C688,308 698,296 706,284
-         C712,290 724,306 742,316
-         C764,326 792,328 818,318
-         C836,310 848,296 856,284
-
-         C862,290 872,304 888,314
-         C908,324 936,326 964,316
-         C984,308 996,294 1004,282
-         C1010,288 1022,304 1040,314
-         C1062,324 1092,326 1120,316
-         C1140,308 1154,294 1162,282
-         C1168,288 1180,304 1200,314
-         C1224,324 1260,326 1296,316
-         C1324,308 1344,294 1360,282
-         C1368,290 1382,306 1404,314
-         C1418,320 1432,320 1440,316
+    <!-- Main foreground vegetation mass -->
+    <path fill="url(#serraGrad)"
+      d="M0,380 L0,310
+         Q15,305 25,298 Q32,293 38,296 Q44,299 52,306
+         Q62,314 78,318 Q96,322 116,316 Q132,311 144,302
+         Q155,294 162,288 Q168,293 176,302 Q186,312 198,316
+         Q215,320 232,315 Q246,310 256,302
+         Q265,295 270,290 Q276,295 284,304 Q295,315 310,318
+         Q330,322 352,316 Q370,310 382,300
+         Q392,292 398,288 Q404,293 412,302 Q424,314 440,318
+         Q460,322 482,316 Q498,310 510,300
+         Q520,291 526,287 Q532,291 542,302 Q556,316 574,320
+         Q595,324 618,318 Q638,312 652,300
+         Q662,292 668,287 Q674,292 684,302 Q698,316 716,320
+         Q738,324 762,318 Q782,312 796,300
+         Q806,292 812,287 Q818,292 828,303 Q842,317 860,321
+         Q882,325 906,319 Q926,313 940,301
+         Q950,293 956,288 Q962,293 972,304 Q986,318 1006,322
+         Q1030,326 1056,320 Q1078,314 1092,302
+         Q1102,294 1108,289 Q1114,294 1124,305 Q1138,319 1158,323
+         Q1182,327 1208,321 Q1230,315 1246,303
+         Q1258,295 1264,290 Q1270,295 1282,306 Q1298,320 1320,324
+         Q1348,328 1380,320 Q1415,312 1440,300
          L1440,380 Z"/>
 
-    <!-- Vegetation texture at base -->
-    <g fill="none" stroke="#C9A96E" stroke-opacity="0.13" stroke-width="1">
-      <path d="M0,348 Q12,343 24,348 Q36,353 48,348 Q60,343 72,348 Q84,353 96,348 Q108,343 120,348 Q132,353 144,348 Q156,343 168,348 Q180,353 192,348 Q204,343 216,348 Q228,353 240,348 Q252,343 264,348 Q276,353 288,348 Q300,343 312,348 Q324,353 336,348 Q348,343 360,348 Q372,353 384,348 Q396,343 408,348 Q420,353 432,348 Q444,343 456,348 Q468,353 480,348 Q492,343 504,348 Q516,353 528,348 Q540,343 552,348 Q564,353 576,348 Q588,343 600,348 Q612,353 624,348 Q636,343 648,348 Q660,353 672,348 Q684,343 696,348 Q708,353 720,348 Q732,343 744,348 Q756,353 768,348 Q780,343 792,348 Q804,353 816,348 Q828,343 840,348 Q852,353 864,348 Q876,343 888,348 Q900,353 912,348 Q924,343 936,348 Q948,353 960,348 Q972,343 984,348 Q996,353 1008,348 Q1020,343 1032,348 Q1044,353 1056,348 Q1068,343 1080,348 Q1092,353 1104,348 Q1116,343 1128,348 Q1140,353 1152,348 Q1164,343 1176,348 Q1188,353 1200,348 Q1212,343 1224,348 Q1236,353 1248,348 Q1260,343 1272,348 Q1284,353 1296,348 Q1308,343 1320,348 Q1332,353 1344,348 Q1356,343 1368,348 Q1380,353 1392,348 Q1404,343 1416,348 Q1428,353 1440,348"/>
-      <path d="M0,362 Q12,357 24,362 Q36,367 48,362 Q60,357 72,362 Q84,367 96,362 Q108,357 120,362 Q132,367 144,362 Q156,357 168,162 Q180,357 192,362 Q204,367 216,362 Q228,357 240,362 Q252,367 264,362 Q276,357 288,362 Q300,367 312,362 Q324,357 336,362 Q348,367 360,362 Q372,357 384,362 Q396,367 408,362 Q420,357 432,362 Q444,367 456,362 Q468,357 480,362 Q492,367 504,362 Q516,357 528,362 Q540,367 552,362 Q564,357 576,362 Q588,367 600,362 Q612,357 624,362 Q636,367 648,362 Q660,357 672,362 Q684,367 696,362 Q708,357 720,362 Q732,367 744,362 Q756,357 768,362 Q780,367 792,362 Q804,357 816,362 Q828,367 840,362 Q852,357 864,362 Q876,367 888,362 Q900,357 912,362 Q924,367 936,362 Q948,357 960,362 Q972,367 984,362 Q996,357 1008,362 Q1020,367 1032,362 Q1044,357 1056,362 Q1068,367 1080,362 Q1092,357 1104,362 Q1116,367 1128,362 Q1140,357 1152,362 Q1164,367 1176,362 Q1188,357 1200,362 Q1212,367 1224,362 Q1236,357 1248,362 Q1260,367 1272,362 Q1284,357 1296,362 Q1308,367 1320,362 Q1332,357 1344,362 Q1356,367 1368,362 Q1380,357 1392,362 Q1404,367 1416,362 Q1428,367 1440,362"/>
+    <!-- Dedo de Deus — tall thin spire (center-left of composition) -->
+    <!-- This is the iconic finger-like peak -->
+    <g fill="url(#serraGrad)">
+      <!-- Left smooth peak (Cabeça de Peixe equivalent) -->
+      <path d="M128,310 L108,230 Q112,210 118,195 Q122,183 126,178 Q130,183 133,195 Q138,210 142,230 L148,310 Z"/>
+
+      <!-- Second peak -->
+      <path d="M258,310 L240,260 Q244,242 250,228 Q255,216 260,210 Q265,216 269,228 Q274,243 276,262 L282,310 Z"/>
+
+      <!-- Third peak — small -->
+      <path d="M352,308 L338,272 Q342,258 347,248 Q351,240 354,236 Q357,240 360,248 Q364,259 366,273 L370,308 Z"/>
+
+      <!-- DEDO DE DEUS — the iconic thin finger spire, tallest -->
+      <!-- Base bulge -->
+      <path d="M468,312
+               L454,285 Q456,270 460,252 Q463,238 466,222
+               Q468,210 470,196 Q472,180 474,162 Q476,145 478,128
+               Q479,115 480,100 Q481,88 482,78
+               Q483,68 484,62 Q485,56 486,52 Q487,48 488,45
+               Q489,42 490,40 Q491,38 492,38
+               Q493,38 494,40 Q495,43 496,47
+               Q497,52 498,58 Q499,65 500,74
+               Q501,85 502,98 Q503,114 504,132
+               Q506,152 508,172 Q510,190 512,206
+               Q514,222 516,236 Q519,250 522,262 Q525,274 528,284
+               L532,312 Z"/>
+      <!-- Finger tip detail -->
+      <path d="M486,50 Q488,35 490,28 Q491,22 492,18 Q493,14 494,12
+               Q495,10 496,10 Q497,10 498,12 Q499,15 500,20
+               Q501,26 502,34 Q503,44 504,56
+               Q501,52 498,48 Q495,45 492,43 Q489,45 486,50 Z" opacity="0.6"/>
+
+      <!-- Right rock mass — Verruga -->
+      <path d="M578,312 L558,260 Q562,238 570,215 Q576,196 582,182
+               Q584,176 586,170 Q588,165 590,162
+               Q595,155 600,150 Q603,147 606,145
+               Q612,140 620,136 Q628,133 636,132
+               Q648,130 658,132 Q668,134 676,138
+               Q684,142 690,148 Q696,154 700,160
+               Q705,167 708,174 Q712,182 715,192
+               Q720,208 724,226 Q728,246 730,266
+               L738,312 Z"/>
+      <!-- Verruga left sub-peak -->
+      <path d="M596,315 L582,268 Q584,254 588,240 Q592,228 596,220
+               Q600,212 604,206 Q607,202 610,200
+               Q613,202 616,208 Q620,216 624,228
+               Q628,242 630,258 L636,315 Z" opacity="0.7"/>
+    </g>
+
+    <!-- Hatching on rocks (like the illustration) -->
+    <g fill="none" stroke="#C9A96E" stroke-opacity="0.18" stroke-width="0.8">
+      <!-- Hatching on Dedo de Deus right side -->
+      <line x1="498" y1="60" x2="530" y2="200"/>
+      <line x1="500" y1="80" x2="528" y2="180"/>
+      <line x1="502" y1="100" x2="526" y2="200"/>
+      <line x1="504" y1="120" x2="528" y2="230"/>
+      <line x1="506" y1="145" x2="530" y2="260"/>
+      <line x1="508" y1="170" x2="530" y2="280"/>
+      <!-- Hatching on right rock mass -->
+      <line x1="690" y1="150" x2="730" y2="250"/>
+      <line x1="694" y1="160" x2="732" y2="265"/>
+      <line x1="698" y1="175" x2="734" y2="280"/>
+      <line x1="700" y1="195" x2="734" y2="295"/>
+      <!-- Hatching on left peak -->
+      <line x1="130" y1="185" x2="148" y2="260"/>
+      <line x1="134" y1="195" x2="148" y2="270"/>
+    </g>
+
+    <!-- Vegetation texture at base (wavy lines like the illustration) -->
+    <g fill="none" stroke="#C9A96E" stroke-opacity="0.15" stroke-width="1">
+      <!-- Row 1 -->
+      <path d="M0,345 Q10,340 20,345 Q30,350 40,345 Q50,340 60,345 Q70,350 80,345 Q90,340 100,345 Q110,350 120,345 Q130,340 140,345 Q150,350 160,345 Q170,340 180,345 Q190,350 200,345 Q210,340 220,345 Q230,350 240,345 Q250,340 260,345 Q270,350 280,345 Q290,340 300,345 Q310,350 320,345 Q330,340 340,345 Q350,350 360,345 Q370,340 380,345 Q390,350 400,345 Q410,340 420,345 Q430,350 440,345 Q450,340 460,345 Q470,350 480,345 Q490,340 500,345 Q510,350 520,345 Q530,340 540,345 Q550,350 560,345 Q570,340 580,345 Q590,350 600,345 Q610,340 620,345 Q630,350 640,345 Q650,340 660,345 Q670,350 680,345 Q690,340 700,345 Q710,350 720,345 Q730,340 740,345 Q750,350 760,345 Q770,340 780,345 Q790,350 800,345 Q810,340 820,345 Q830,350 840,345 Q850,340 860,345 Q870,350 880,345 Q890,340 900,345 Q910,350 920,345 Q930,340 940,345 Q950,350 960,345 Q970,340 980,345 Q990,350 1000,345 Q1010,340 1020,345 Q1030,350 1040,345 Q1050,340 1060,345 Q1070,350 1080,345 Q1090,340 1100,345 Q1110,350 1120,345 Q1130,340 1140,345 Q1150,350 1160,345 Q1170,340 1180,345 Q1190,350 1200,345 Q1210,340 1220,345 Q1230,350 1240,345 Q1250,340 1260,345 Q1270,350 1280,345 Q1290,340 1300,345 Q1310,350 1320,345 Q1330,340 1340,345 Q1350,350 1360,345 Q1370,340 1380,345 Q1390,350 1400,345 Q1410,340 1420,345 Q1430,350 1440,345"/>
+      <!-- Row 2 -->
+      <path d="M0,358 Q10,353 20,358 Q30,363 40,358 Q50,353 60,358 Q70,363 80,358 Q90,353 100,358 Q110,363 120,358 Q130,353 140,358 Q150,363 160,158 Q170,353 180,358 Q190,363 200,358 Q210,353 220,358 Q230,363 240,358 Q250,353 260,358 Q270,363 280,358 Q290,353 300,358 Q310,363 320,358 Q330,353 340,358 Q350,363 360,358 Q370,353 380,358 Q390,363 400,358 Q410,353 420,358 Q430,363 440,358 Q450,353 460,358 Q470,363 480,358 Q490,353 500,358 Q510,363 520,358 Q530,353 540,358 Q550,363 560,358 Q570,353 580,358 Q590,363 600,358 Q610,353 620,358 Q630,363 640,358 Q650,353 660,358 Q670,363 680,358 Q690,353 700,358 Q710,363 720,358 Q730,353 740,358 Q750,363 760,358 Q770,353 780,358 Q790,363 800,358 Q810,353 820,358 Q830,363 840,358 Q850,353 860,358 Q870,363 880,358 Q890,353 900,358 Q910,363 920,358 Q930,353 940,358 Q950,363 960,358 Q970,353 980,358 Q990,363 1000,358 Q1010,353 1020,358 Q1030,363 1040,358 Q1050,353 1060,358 Q1070,363 1080,358 Q1090,353 1100,358 Q1110,363 1120,358 Q1130,353 1140,358 Q1150,363 1160,358 Q1170,353 1180,358 Q1190,363 1200,358 Q1210,353 1220,358 Q1230,363 1240,358 Q1250,353 1260,358 Q1270,363 1280,358 Q1290,353 1300,358 Q1310,363 1320,358 Q1330,353 1340,358 Q1350,363 1360,358 Q1370,353 1380,358 Q1390,363 1400,358 Q1410,353 1420,358 Q1430,363 1440,358"/>
     </g>
   </svg>
 
-  <div class="scroll-hint">\u2193</div>
+  <div class="scroll-hint">↓</div>
 </section>
 
-<!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 NAV \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->
+<!-- ══════════ NAV ══════════ -->
 <nav>
   <ul>
     <li><a href="#contagem">Contagem</a></li>
-    <li><a href="#historia">Nossa Hist\u00f3ria</a></li>
-    <li><a href="#cerimonia">Programa\u00e7\u00e3o</a></li>
+    <li><a href="#historia">Nossa História</a></li>
+    <li><a href="#cerimonia">Programação</a></li>
     <li><a href="#traje">Traje</a></li>
     <li><a href="#presentes">Presentes</a></li>
-    <li><a href="#confirmacao">Confirma\u00e7\u00e3o</a></li>
+    <li><a href="#confirmacao">Confirmação</a></li>
     <li><a href="#local">Local</a></li>
   </ul>
 </nav>
 
-<!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 CONTAGEM \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->
+<!-- ══════════ CONTAGEM ══════════ -->
 <section id="contagem">
   <p class="sec-label reveal">Faltam apenas</p>
   <h2 class="sec-title reveal">O grande dia <em>se aproxima</em></h2>
-  <div class="ornament reveal"><span>\u2767</span></div>
+  <div class="ornament reveal"><span>❧</span></div>
   <div class="cd-grid reveal">
     <div class="cd-item"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Dias</span></div>
-    <span class="cd-sep">\u00b7</span>
+    <span class="cd-sep">·</span>
     <div class="cd-item"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Horas</span></div>
-    <span class="cd-sep">\u00b7</span>
+    <span class="cd-sep">·</span>
     <div class="cd-item"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Minutos</span></div>
-    <span class="cd-sep">\u00b7</span>
+    <span class="cd-sep">·</span>
     <div class="cd-item"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Segundos</span></div>
   </div>
 </section>
 
-<!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 HIST\u00d3RIA \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->
+<!-- ══════════ HISTÓRIA ══════════ -->
 <section id="historia">
-  <p class="sec-label reveal">Dois cora\u00e7\u00f5es</p>
-  <h2 class="sec-title reveal">Nossa <em>Hist\u00f3ria</em></h2>
-  <div class="ornament reveal"><span>\u2767</span></div>
-  <p class="hist-text reveal">\u2726 Em breve compartilharemos nossa hist\u00f3ria com voc\u00eas. \u2726</p>
+  <p class="sec-label reveal">Dois corações</p>
+  <h2 class="sec-title reveal">Nossa <em>História</em></h2>
+  <div class="ornament reveal"><span>❧</span></div>
+  <p class="hist-text reveal">
+    ✦ Em breve compartilharemos nossa história com vocês. ✦
+  </p>
   <p class="hist-text reveal" style="margin-top:24px; font-size:clamp(20px,3vw,26px); color:var(--marrom-claro);">
     Em 13 de julho de 2026, dizemos sim.
   </p>
 </section>
 
-<!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 VENUE / CASA \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->
+<!-- ══════════ VENUE / CASA ══════════ -->
 <section id="venue">
   <p class="sec-label reveal">Onde tudo acontece</p>
   <h2 class="sec-title reveal">A <em>Casa</em></h2>
-  <div class="ornament reveal"><span>\u2767</span></div>
+  <div class="ornament reveal"><span>❧</span></div>
 
-  <!-- Uploaded house illustration (no background) -->
-  <img
-    src="/mnt/user-data/uploads/1000161286.png"
-    alt="Casa Ville Verte \u2014 ilustra\u00e7\u00e3o"
-    class="venue-house-img reveal"
-  />
+  <!-- Illustrated house SVG inspired by the save-the-date sketch -->
+  <div class="venue-svg-wrap reveal">
+    <svg viewBox="0 0 700 380" style="max-width:680px;width:100%;" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <style>
+          .hc { fill: none; stroke: #6B2D1A; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+          .hf { fill: #F3EBE0; stroke: #6B2D1A; stroke-width: 1.0; }
+          .ht { fill: none; stroke: #6B2D1A; stroke-width: 0.7; opacity: 0.55; }
+          .tree { fill: none; stroke: #6B2D1A; stroke-width: 1.0; stroke-linecap: round; }
+        </style>
+      </defs>
+
+      <!-- Ground -->
+      <line x1="50" y1="310" x2="650" y2="310" class="hc" opacity="0.3"/>
+
+      <!-- Main house body left -->
+      <rect x="90" y="200" width="180" height="110" class="hf"/>
+      <!-- Roof left -->
+      <polygon points="78,200 180,148 282,200" class="hf"/>
+      <!-- Roof tiles left (lines) -->
+      <line x1="78" y1="200" x2="180" y2="148" class="ht"/>
+      <line x1="282" y1="200" x2="180" y2="148" class="ht"/>
+      <line x1="100" y1="196" x2="160" y2="162" class="ht"/>
+      <line x1="120" y1="196" x2="180" y2="153" class="ht"/>
+      <line x1="140" y1="196" x2="195" y2="155" class="ht"/>
+      <line x1="160" y1="196" x2="210" y2="157" class="ht"/>
+      <line x1="180" y1="196" x2="224" y2="162" class="ht"/>
+      <line x1="200" y1="196" x2="238" y2="170" class="ht"/>
+      <line x1="220" y1="196" x2="252" y2="176" class="ht"/>
+      <line x1="240" y1="196" x2="266" y2="184" class="ht"/>
+      <line x1="260" y1="196" x2="276" y2="193" class="ht"/>
+
+      <!-- Windows left house -->
+      <rect x="106" y="218" width="32" height="28" class="hf" stroke="#6B2D1A" stroke-width="1"/>
+      <line x1="122" y1="218" x2="122" y2="246" class="ht"/>
+      <line x1="106" y1="232" x2="138" y2="232" class="ht"/>
+      <rect x="155" y="218" width="32" height="28" class="hf" stroke="#6B2D1A" stroke-width="1"/>
+      <line x1="171" y1="218" x2="171" y2="246" class="ht"/>
+      <line x1="155" y1="232" x2="187" y2="232" class="ht"/>
+      <rect x="204" y="218" width="32" height="28" class="hf" stroke="#6B2D1A" stroke-width="1"/>
+      <line x1="220" y1="218" x2="220" y2="246" class="ht"/>
+      <line x1="204" y1="232" x2="236" y2="232" class="ht"/>
+
+      <!-- Door left -->
+      <path d="M163,310 L163,268 Q180,260 197,268 L197,310 Z" class="hf" stroke="#6B2D1A" stroke-width="1"/>
+      <circle cx="193" cy="290" r="2" fill="#6B2D1A" opacity="0.6"/>
+
+      <!-- Porch/pergola left -->
+      <rect x="90" y="270" width="70" height="40" class="hc" opacity="0.5"/>
+      <line x1="90" y1="270" x2="90" y2="310" class="hc" opacity="0.4"/>
+      <line x1="160" y1="270" x2="160" y2="310" class="hc" opacity="0.4"/>
+      <!-- Porch roof -->
+      <line x1="82" y1="270" x2="168" y2="270" class="hc" opacity="0.5"/>
+      <line x1="95" y1="265" x2="95" y2="270" class="ht"/>
+      <line x1="112" y1="265" x2="112" y2="270" class="ht"/>
+      <line x1="129" y1="265" x2="129" y2="270" class="ht"/>
+      <line x1="146" y1="265" x2="146" y2="270" class="ht"/>
+
+      <!-- Main house body right (taller, with balcony) -->
+      <rect x="280" y="175" width="160" height="135" class="hf"/>
+      <!-- Roof right -->
+      <polygon points="268,175 360,120 452,175" class="hf"/>
+      <!-- Roof tiles right -->
+      <line x1="268" y1="175" x2="360" y2="120" class="ht"/>
+      <line x1="452" y1="175" x2="360" y2="120" class="ht"/>
+      <line x1="285" y1="172" x2="330" y2="138" class="ht"/>
+      <line x1="305" y1="172" x2="348" y2="125" class="ht"/>
+      <line x1="325" y1="172" x2="365" y2="122" class="ht"/>
+      <line x1="345" y1="172" x2="382" y2="124" class="ht"/>
+      <line x1="365" y1="172" x2="398" y2="130" class="ht"/>
+      <line x1="385" y1="172" x2="414" y2="140" class="ht"/>
+      <line x1="405" y1="172" x2="430" y2="153" class="ht"/>
+      <line x1="425" y1="172" x2="444" y2="166" class="ht"/>
+
+      <!-- Balcony on right house -->
+      <rect x="295" y="222" width="130" height="50" class="hf" stroke="#6B2D1A" stroke-width="1"/>
+      <!-- Balcony railing -->
+      <line x1="295" y1="235" x2="425" y2="235" class="ht"/>
+      <line x1="303" y1="222" x2="303" y2="272" class="ht"/>
+      <line x1="316" y1="222" x2="316" y2="272" class="ht"/>
+      <line x1="329" y1="222" x2="329" y2="272" class="ht"/>
+      <line x1="342" y1="222" x2="342" y2="272" class="ht"/>
+      <line x1="355" y1="222" x2="355" y2="272" class="ht"/>
+      <line x1="368" y1="222" x2="368" y2="272" class="ht"/>
+      <line x1="381" y1="222" x2="381" y2="272" class="ht"/>
+      <line x1="394" y1="222" x2="394" y2="272" class="ht"/>
+      <line x1="407" y1="222" x2="407" y2="272" class="ht"/>
+      <line x1="420" y1="222" x2="420" y2="272" class="ht"/>
+
+      <!-- Door right -->
+      <path d="M344,310 L344,272 Q360,264 376,272 L376,310 Z" class="hf" stroke="#6B2D1A" stroke-width="1"/>
+      <circle cx="372" cy="293" r="2" fill="#6B2D1A" opacity="0.6"/>
+
+      <!-- Garage/annex right side -->
+      <rect x="445" y="230" width="90" height="80" class="hf"/>
+      <polygon points="435,230 490,195 545,230" class="hf"/>
+      <line x1="435" y1="230" x2="490" y2="195" class="ht"/>
+      <line x1="545" y1="230" x2="490" y2="195" class="ht"/>
+      <line x1="450" y1="228" x2="475" y2="205" class="ht"/>
+      <line x1="465" y1="228" x2="490" y2="197" class="ht"/>
+      <line x1="480" y1="228" x2="505" y2="200" class="ht"/>
+      <line x1="495" y1="228" x2="518" y2="208" class="ht"/>
+      <line x1="510" y1="228" x2="530" y2="216" class="ht"/>
+      <!-- Garage door -->
+      <rect x="455" y="262" width="70" height="48" class="hf" stroke="#6B2D1A" stroke-width="1"/>
+      <line x1="455" y1="275" x2="525" y2="275" class="ht"/>
+      <line x1="455" y1="288" x2="525" y2="288" class="ht"/>
+      <line x1="490" y1="262" x2="490" y2="310" class="ht"/>
+
+      <!-- TREES — tall conifers back left -->
+      <!-- Large tree back left -->
+      <g class="tree">
+        <line x1="62" y1="160" x2="62" y2="310"/>
+        <!-- Layers of branches -->
+        <path d="M62,160 Q42,175 38,185 Q55,178 62,178 Q69,178 86,185 Q82,175 62,160 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M62,185 Q38,202 32,215 Q52,206 62,207 Q72,206 92,215 Q86,202 62,185 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M62,215 Q35,232 28,248 Q50,238 62,240 Q74,238 96,248 Q89,232 62,215 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M62,245 Q30,265 22,282 Q47,270 62,272 Q77,270 102,282 Q94,265 62,245 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+      </g>
+
+      <!-- Tall thin tree back center -->
+      <g class="tree">
+        <line x1="230" y1="115" x2="230" y2="200"/>
+        <path d="M230,115 Q215,125 210,132 Q222,128 230,129 Q238,128 250,132 Q245,125 230,115 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M230,132 Q212,144 206,153 Q220,148 230,149 Q240,148 254,153 Q248,144 230,132 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M230,152 Q208,166 202,177 Q218,170 230,172 Q242,170 258,177 Q252,166 230,152 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M230,175 Q205,192 198,205 Q216,196 230,198 Q244,196 262,205 Q255,192 230,175 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+      </g>
+
+      <!-- Palm tree right area -->
+      <g class="tree">
+        <line x1="575" y1="155" x2="575" y2="240"/>
+        <!-- Palm fronds -->
+        <path d="M575,155 Q552,140 540,132 Q548,148 560,158 Q565,160 575,155 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M575,155 Q598,140 610,132 Q602,148 590,158 Q585,160 575,155 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M575,155 Q558,135 552,120 Q562,140 570,150 Q572,152 575,155 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M575,155 Q592,135 598,120 Q588,140 580,150 Q578,152 575,155 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M575,155 Q565,128 565,110 Q572,135 574,148 Q574,151 575,155 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M575,155 Q585,128 585,110 Q578,135 576,148 Q576,151 575,155 Z" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+      </g>
+
+      <!-- Round bushy trees -->
+      <!-- Back right large tree -->
+      <g class="tree">
+        <line x1="620" y1="175" x2="620" y2="310"/>
+        <ellipse cx="620" cy="145" rx="42" ry="38" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M600,155 Q610,148 620,145 Q630,148 640,155" class="ht"/>
+        <path d="M592,168 Q605,158 620,155 Q635,158 648,168" class="ht"/>
+        <path d="M590,182 Q604,170 620,167 Q636,170 650,182" class="ht"/>
+      </g>
+      <!-- Smaller round tree left side -->
+      <g class="tree">
+        <line x1="52" y1="245" x2="52" y2="310"/>
+        <ellipse cx="52" cy="225" rx="28" ry="24" fill="#F3EBE0" stroke="#6B2D1A" stroke-width="1"/>
+        <path d="M36,230 Q44,224 52,222 Q60,224 68,230" class="ht"/>
+        <path d="M34,240 Q43,232 52,230 Q61,232 70,240" class="ht"/>
+      </g>
+
+      <!-- Vegetation / bushes in front -->
+      <path d="M60,312 Q70,304 80,308 Q90,312 100,304 Q110,296 120,304 Q130,310 140,302 Q148,295 155,300 Q162,304 170,298 Q178,292 186,298" class="ht" stroke-width="1.2"/>
+      <path d="M380,312 Q392,302 404,308 Q416,312 428,302 Q438,293 448,300 Q456,306 464,298 Q472,290 480,297 Q488,302 496,294 Q504,287 512,294 Q520,300 528,292" class="ht" stroke-width="1.2"/>
+
+      <!-- Foreground ground vegetation -->
+      <path d="M50,325 Q65,318 80,325 Q95,332 110,322 Q122,314 135,322 Q148,330 160,320 Q172,311 185,320 Q198,328 212,318 Q224,309 238,318 Q252,326 266,316 Q278,307 292,315 Q305,322 320,313" class="ht"/>
+      <path d="M340,325 Q355,318 370,325 Q385,332 400,322 Q412,314 425,322 Q438,330 450,320 Q462,311 475,320 Q488,328 502,318 Q514,309 528,318 Q542,326 556,316 Q568,307 582,315 Q595,322 610,313 Q625,308 640,316 Q655,323 668,315" class="ht"/>
+    </svg>
+  </div>
 
   <p class="hist-text reveal" style="font-style:normal; font-size:clamp(14px,2vw,17px); color:var(--marrom-claro); margin-top:0;">
-    Casa Ville Verte \u00b7 Parque do Imbu\u00ed, 2815 \u00b7 Teres\u00f3polis, RJ
+    Casa Ville Verte · Parque do Imbuí, 2815 · Teresópolis, RJ
   </p>
 </section>
 
-<!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 PROGRAMA\u00c7\u00c3O \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->
+<!-- ══════════ PROGRAMAÇÃO ══════════ -->
 <section id="cerimonia">
   <p class="sec-label reveal">13 de Julho de 2026</p>
-  <h2 class="sec-title reveal">A <em>Celebra\u00e7\u00e3o</em></h2>
-  <div class="ornament reveal" style="margin-bottom:48px;"><span style="color:var(--dourado);">\u2767</span></div>
+  <h2 class="sec-title reveal">A <em>Celebração</em></h2>
+  <div class="ornament reveal" style="margin-bottom:48px;"><span style="color:var(--dourado);">❧</span></div>
   <div class="timeline reveal">
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-time">11h30</div>
       <div>
-        <p class="tl-title">In\u00edcio da Cerim\u00f4nia</p>
-        <p class="tl-sub">Casa Ville Verte \u00b7 Teres\u00f3polis, RJ</p>
+        <p class="tl-title">Início da Cerimônia</p>
+        <p class="tl-sub">Casa Ville Verte · Teresópolis, RJ</p>
       </div>
     </div>
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="tl-time">13h00</div>
       <div>
-        <p class="tl-title">In\u00edcio da Festa</p>
-        <p class="tl-sub">Recep\u00e7\u00e3o e celebra\u00e7\u00e3o</p>
+        <p class="tl-title">Início da Festa</p>
+        <p class="tl-sub">Recepção e celebração</p>
       </div>
     </div>
     <div class="tl-item">
@@ -521,221 +669,133 @@
       <div class="tl-time">18h00</div>
       <div>
         <p class="tl-title">Encerramento</p>
-        <p class="tl-sub">At\u00e9 breve, com muito amor</p>
+        <p class="tl-sub">Até breve, com muito amor</p>
       </div>
     </div>
   </div>
 
-  <!--
-    Serra dos \u00d3rg\u00e3os silhouette divider \u2014 based on uploaded black-and-white illustration.
-    Shows the characteristic rocky spires including the Dedo de Deus.
-    Rendered discretely in gold tones to match the site palette.
-  -->
-  <svg class="serra-cerimonia" viewBox="0 0 1440 240" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" style="margin-top:64px;">
-    <defs>
-      <linearGradient id="sc1" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.22"/>
-        <stop offset="100%" stop-color="#C9A96E" stop-opacity="0.06"/>
-      </linearGradient>
-    </defs>
-
-    <!-- Serra silhouette: left gentle humps, central finger spires, right rocky mass -->
-    <path fill="url(#sc1)"
-      d="M0,240 L0,195
-         C30,188 55,178 72,164
-         C82,156 88,146 92,138
-         C96,146 100,156 108,164
-         C120,174 136,180 154,176
-         C166,173 174,164 180,156
-         C185,163 192,174 202,180
-         C216,188 234,190 250,183
-         C260,178 267,169 272,160
-
-         C275,153 277,144 278,134
-         C279,123 280,111 281,99
-         C282,88 283,77 284,68
-         C285,60 286,53 287,47
-         C288,42 289,38 290,35
-         C291,32 292,30 293,30
-         C294,30 295,32 296,35
-         C297,39 298,44 299,51
-         C300,59 301,68 302,79
-         C303,91 304,104 305,117
-         C306,130 307,142 308,153
-         C309,162 310,170 312,176
-
-         C315,168 320,156 328,146
-         C335,155 343,168 354,177
-         C368,186 386,188 402,180
-         C413,175 420,165 425,155
-         C430,163 438,175 450,183
-         C465,191 484,192 500,184
-         C512,178 519,167 524,157
-
-         C330,157 338,168 350,178
-         C366,188 388,190 408,182
-         C422,177 430,166 436,156
-
-         C530,164 539,176 552,185
-         C568,194 590,195 610,187
-         C624,181 633,169 639,158
-         C645,166 655,180 670,188
-         C688,196 712,196 734,187
-         C748,181 758,168 764,156
-
-         C771,165 782,180 798,188
-         C818,197 844,197 868,187
-         C883,180 893,166 899,154
-         C906,164 918,180 936,188
-         C958,197 986,197 1012,185
-         C1028,178 1038,164 1045,152
-         C1052,162 1065,178 1084,186
-         C1108,195 1138,195 1164,183
-         C1180,176 1190,162 1197,150
-         C1204,160 1218,176 1238,184
-         C1264,193 1298,193 1328,181
-         C1350,173 1366,158 1376,148
-         C1384,158 1398,174 1418,182
-         L1440,186 L1440,240 Z"/>
+  <!-- Smaller Serra silhouette divider at bottom -->
+  <svg class="serra-cerimonia" viewBox="0 0 1440 180" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" style="margin-top:64px;">
+    <path fill="#C9A96E" fill-opacity="0.12"
+      d="M0,180 L0,130 Q50,120 80,108 Q105,98 118,82 Q125,72 130,65 Q134,58 136,52 Q138,46 140,52 Q142,60 146,72 Q152,88 162,100 Q175,114 195,124 Q218,134 245,130 Q265,127 280,118 Q292,111 300,102 Q306,95 310,89 Q314,95 320,106 Q330,120 346,130 Q368,142 396,138 Q416,135 430,124 Q442,115 450,105 Q456,97 462,90 Q468,97 476,108 Q488,122 506,132 Q528,142 554,138 Q574,135 590,124 Q602,116 610,106 Q616,99 622,92 Q628,99 638,112 Q652,128 672,138 Q698,148 728,144 Q750,141 766,130 Q778,122 786,112 Q792,105 798,98 Q804,105 814,118 Q828,134 850,144 Q878,154 908,150 Q930,147 946,136 Q958,128 966,118 Q972,111 978,104 Q984,111 994,124 Q1008,140 1030,150 Q1058,160 1090,156 Q1112,153 1128,142 Q1140,134 1148,124 Q1154,117 1160,110 Q1166,117 1178,130 Q1194,146 1218,154 Q1248,162 1282,158 Q1308,155 1326,144 Q1340,136 1350,126 Q1357,118 1364,112 Q1371,118 1382,132 Q1398,148 1420,155 L1440,158 L1440,180 Z"/>
   </svg>
 </section>
 
-<!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 TRAJE \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->
+<!-- ══════════ TRAJE ══════════ -->
 <section id="traje">
   <p class="sec-label reveal">Dress Code</p>
   <h2 class="sec-title reveal"><em>Traje</em> Recomendado</h2>
-  <div class="ornament reveal"><span>\u2767</span></div>
+  <div class="ornament reveal"><span>❧</span></div>
   <div class="traje-grid">
     <div class="traje-card reveal">
-      <span class="traje-icon">\u2642</span>
+      <span class="traje-icon">♂</span>
       <p class="traje-tipo">Ele</p>
-      <p class="traje-desc">Esporte fino com uso de <strong>blazer</strong> recomendado. O frio da serra merece eleg\u00e2ncia!</p>
+      <p class="traje-desc">Esporte fino com uso de <strong>blazer</strong> recomendado. O frio da serra merece elegância!</p>
     </div>
     <div class="traje-card reveal">
-      <span class="traje-icon">\u2640</span>
+      <span class="traje-icon">♀</span>
       <p class="traje-tipo">Ela</p>
       <p class="traje-desc">Esporte fino. Recomendamos <strong>stolas, pashminas e xales</strong> pelo frio do inverno serrano.</p>
     </div>
   </div>
   <p class="traje-obs reveal" style="margin-top:32px;">
-    \ud83c\udf3f Por gentileza, evitar roupas nas cores <strong>branco</strong> e <strong>marrom</strong>.
+    🌿 Por gentileza, evitar roupas nas cores <strong>branco</strong> e <strong>marrom</strong>.
   </p>
 </section>
 
-<!-- \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 PRESENTES \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 -->
+<!-- ══════════ PRESENTES ══════════ -->
 <section id="presentes">
   <p class="sec-label reveal">Com carinho</p>
   <h2 class="sec-title reveal">Lista de <em>Presentes</em></h2>
-  <div class="ornament reveal"><span>\u2767</span></div>
+  <div class="ornament reveal"><span>❧</span></div>
   <p class="presentes-intro reveal">
-    Sua presen\u00e7a j\u00e1 \u00e9 o maior presente. Mas se quiser nos presentear, preparamos uma lista especial \u2014 clique em uma faixa para ver as sugest\u00f5es.
+    Sua presença já é o maior presente. Mas se quiser nos presentear, preparamos uma lista especial dividida por faixas de valores.
   </p>
+  <div class="presentes-grid reveal">
+    <a href="#" class="presente-btn">
+      <p class="presente-faixa">Faixa 1</p>
+      <p class="presente-valor">Até R$ 100</p>
+    </a>
+    <a href="#" class="presente-btn">
+      <p class="presente-faixa">Faixa 2</p>
+      <p class="presente-valor">R$ 100 – R$ 300</p>
+    </a>
+    <a href="#" class="presente-btn">
+      <p class="presente-faixa">Faixa 3</p>
+      <p class="presente-valor">R$ 300 – R$ 600</p>
+    </a>
+    <a href="#" class="presente-btn">
+      <p class="presente-faixa">Faixa 4</p>
+      <p class="presente-valor">Acima de R$ 600</p>
+    </a>
+  </div>
+  <p class="traje-obs reveal" style="margin-top:28px;">Em breve os links estarão disponíveis aqui. 🎁</p>
+</section>
 
-  <div class="accordion-wrap reveal">
+<!-- ══════════ CONFIRMAÇÃO ══════════ -->
+<section id="confirmacao">
+  <p class="sec-label reveal">Sua presença é especial</p>
+  <h2 class="sec-title reveal">Confirme sua <em>Presença</em></h2>
+  <div class="ornament reveal"><span>❧</span></div>
+  <p class="rsvp-whats reveal">
+    Confirme sua presença até o dia <strong>13 de maio</strong> pelo WhatsApp:
+  </p>
+  <a href="https://wa.me/552126416001" class="whats-btn reveal">(21) 2641-6001</a>
+</section>
 
-    <!-- FAIXA 1: At\u00e9 R$300 -->
-    <div class="acc-tier" id="tier1">
-      <div class="acc-header" onclick="toggleTier('tier1')">
-        <div>
-          <p class="acc-tier-label">Faixa 1</p>
-          <p class="acc-tier-range">At\u00e9 R$ 300</p>
-        </div>
-        <span class="acc-arrow">\u2193</span>
-      </div>
-      <div class="acc-body">
-        <div class="acc-body-inner">
+<!-- ══════════ LOCAL ══════════ -->
+<section id="local">
+  <p class="sec-label reveal">Como chegar</p>
+  <h2 class="sec-title reveal">O <em>Local</em></h2>
+  <div class="ornament reveal" style="margin-bottom:40px;"><span style="color:var(--dourado);opacity:0.6;">❧</span></div>
+  <div class="reveal">
+    <div class="address-box">
+      <p class="address-name">Casa Ville Verte</p>
+      <p class="address-text">
+        Parque do Imbuí, 2815<br>
+        Teresópolis, Rio de Janeiro<br><br>
+        13 de julho de 2026
+      </p>
+      <a class="map-link" href="https://maps.google.com/?q=Parque+do+Imbui+2815+Teresopolis+RJ" target="_blank">
+        Abrir no Google Maps →
+      </a>
+    </div>
+  </div>
+</section>
 
-          <div class="gift-category">
-            <p class="gift-cat-title">Liquidificador</p>
-            <div class="gift-item">
-              <p class="gift-name">Liquidificador Oster 1400W</p>
-              <div class="gift-links">
-                <a href="https://amzn.to/47dvdIA" target="_blank" class="gift-link">Amazon</a>
-                <a href="https://meli.la/28WFzh2" target="_blank" class="gift-link">Mercado Livre</a>
-              </div>
-            </div>
-            <div class="gift-item">
-              <p class="gift-name">Liquidificador Electrolux 1500W</p>
-              <div class="gift-links">
-                <a href="https://meli.la/32srsgZ" target="_blank" class="gift-link">Mercado Livre</a>
-                <a href="https://amzn.to/4sYhnlK" target="_blank" class="gift-link">Amazon</a>
-              </div>
-            </div>
-          </div>
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <p class="footer-mono">PP</p>
+  <p class="footer-names">Paolla e Paulo</p>
+  <p class="footer-sub">13 · 07 · 2026 &nbsp;·&nbsp; Teresópolis, RJ</p>
+  <p class="footer-verse">
+    "Para que todos vejam, e saibam, e considerem, e juntamente entendam<br>
+    que a mão do Senhor fez isto..." — Isaías 41:20
+  </p>
+</footer>
 
-          <div class="gift-category">
-            <p class="gift-cat-title">Sanduicheira Grill</p>
-            <div class="gift-item">
-              <p class="gift-name">Oster 1000W</p>
-              <div class="gift-links">
-                <a href="https://amzn.to/4sYy8xd" target="_blank" class="gift-link">Amazon</a>
-                <a href="https://meli.la/3237nDa" target="_blank" class="gift-link">Mercado Livre</a>
-              </div>
-            </div>
-          </div>
+<script>
+  // Countdown
+  function tick() {
+    const diff = new Date('2026-07-13T11:30:00') - new Date();
+    if (diff <= 0) {
+      ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '00');
+      return;
+    }
+    const p = n => String(n).padStart(2,'0');
+    document.getElementById('cd-d').textContent = p(Math.floor(diff/86400000));
+    document.getElementById('cd-h').textContent = p(Math.floor(diff%86400000/3600000));
+    document.getElementById('cd-m').textContent = p(Math.floor(diff%3600000/60000));
+    document.getElementById('cd-s').textContent = p(Math.floor(diff%60000/1000));
+  }
+  tick(); setInterval(tick, 1000);
 
-          <div class="gift-category">
-            <p class="gift-cat-title">Escorredor de Lou\u00e7a</p>
-            <div class="gift-item">
-              <p class="gift-name">Escorredor Lou\u00e7a Tramontina Inox</p>
-              <div class="gift-links">
-                <a href="https://meli.la/31mjcVA" target="_blank" class="gift-link">Mercado Livre</a>
-                <a href="https://amzn.to/4bVGrEb" target="_blank" class="gift-link">Amazon</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="gift-category">
-            <p class="gift-cat-title">Chaleira</p>
-            <div class="gift-item">
-              <p class="gift-name">Black and Decker</p>
-              <div class="gift-links">
-                <a href="https://amzn.to/40PP6ln" target="_blank" class="gift-link">Amazon</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="gift-category">
-            <p class="gift-cat-title">Saladeira</p>
-            <div class="gift-item">
-              <p class="gift-name">Gamela Ac\u00e1cia 30cm</p>
-              <div class="gift-links">
-                <a href="https://www.tokstok.com.br/bbk-gamela-30-cm-acacia-acacia/p" target="_blank" class="gift-link">Tok&Stok</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="gift-category">
-            <p class="gift-cat-title">Jogo de Ta\u00e7as</p>
-            <div class="gift-item">
-              <p class="gift-name">Ta\u00e7a de cristal 460ml</p>
-              <div class="gift-links">
-                <a href="https://meli.la/1vU2e1b" target="_blank" class="gift-link">Mercado Livre</a>
-                <a href="http://bit.ly/4lGbcQK" target="_blank" class="gift-link">Magalu</a>
-                <a href="https://amzn.to/4lK4B84" target="_blank" class="gift-link">Amazon</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="gift-category">
-            <p class="gift-cat-title">Jogo de Toalha</p>
-            <div class="gift-item">
-              <p class="gift-name">Banh\u00e3o Algod\u00e3o Eg\u00edpcio 600g</p>
-              <div class="gift-links">
-                <a href="https://bit.ly/4uIQTX7" target="_blank" class="gift-link">First Class</a>
-              </div>
-            </div>
-            <div class="gift-item">
-              <p class="gift-name">Buddemeyer Fio Penteado</p>
-              <div class="gift-links">
-                <a href="https://amzn.to/416uOEt" target="_blank" class="gift-link">Amazon</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="gift-category">
-            <p class="gift-cat-title">Porta Tempero</p>
-            <div class="gift-item">
-              <p class="gift-name">Porta Tempero</p>
-              <div class="gift-links">
-                <a href="https://bit.ly/3NGb
+  // Scroll reveal
+  document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    }, { threshold: 0.1 }).observe(el);
+  });
+</script>
+</body>
+</html>

@@ -8,108 +8,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --marrom:        #130706;
-      --marrom-claro:  #6B2D1A;
-      --creme:         #F3EBE0;
-      --dourado:       #C9A96E;
+      --marrom: #130706;
+      --dourado: #C9A96E;
       --dourado-claro: #E8D4A8;
-      --branco:        #FAF6F0;
+      --branco: #FAF6F0;
     }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--branco); color: var(--marrom); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
-
-    /* HERO */
+    body { background: var(--branco); margin: 0; font-family: 'Cormorant Garamond', serif; }
     #hero {
       min-height: 100vh;
       background: var(--marrom);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      text-align: center; padding: 80px 24px 0;
-      position: relative; overflow: hidden;
+      text-align: center; color: white;
     }
-    .hero-content { position: relative; z-index: 2; padding-bottom: 100px; }
-
-    .monogram img {
-      height: clamp(60px, 10vw, 90px);
-      filter: brightness(0) saturate(100%) invert(72%) sepia(38%) saturate(600%) hue-rotate(5deg) brightness(1.15);
-      opacity: 0.85; margin-bottom: 18px;
-    }
-
-    .hero-pre {
-      font-family: 'Cinzel', serif; font-size: 10px;
-      letter-spacing: 0.45em; color: var(--dourado); text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
     .hero-names-img {
-      display: block; margin: 0 auto;
-      width: min(780px, 92vw);
-      filter: brightness(0) invert(1);
-      opacity: 0.96;
+      width: min(700px, 90vw);
+      filter: brightness(0) invert(1); /* Força a imagem preta a ficar branca */
+      display: block;
+      margin: 20px auto;
     }
-
-    .hero-date {
-      font-family: 'Cinzel', serif; font-size: 17px;
-      letter-spacing: 0.3em; color: var(--dourado-claro); margin-top: 30px;
-    }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(19,7,6,0.97); backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(201,169,110,0.12);
-    }
-    nav ul { display: flex; justify-content: center; gap: 20px; list-style: none; padding: 14px; flex-wrap: wrap; }
-    nav a { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.2em; color: var(--dourado-claro); text-decoration: none; text-transform: uppercase; }
-
-    /* SEÇÕES */
-    section { padding: 80px 24px; text-align: center; }
-    .sec-title { font-size: 42px; font-weight: 300; margin-bottom: 40px; }
-
-    /* ILUSTRAÇÃO DA CASA */
     .venue-house-img {
-      display: block; width: 100%; max-width: 500px; margin: 0 auto 30px;
-      filter: brightness(0) invert(1) sepia(1) saturate(0.4) hue-rotate(5deg) brightness(0.9);
-      opacity: 0.8;
+      width: min(500px, 80vw);
+      filter: brightness(0) invert(1) sepia(1) saturate(0.5); /* Efeito dourado/claro */
+      display: block;
+      margin: 20px auto;
     }
-
-    footer { background: var(--marrom); padding: 60px 24px; text-align: center; border-top: 1px solid rgba(201,169,110,0.1); }
-    .footer-sig { height: 70px; filter: brightness(0) invert(1); opacity: 0.6; margin-bottom: 20px; }
+    section { padding: 60px 20px; text-align: center; }
   </style>
 </head>
 <body>
 
 <section id="hero">
-  <div class="hero-content">
-    <div class="monogram">
-      <img src="1000161307-removebg-preview.png" alt="PP" />
-    </div>
-    <p class="hero-pre">Celebração do Matrimônio</p>
-    <img src="1000161307-removebg-preview.png" alt="Paolla e Paulo" class="hero-names-img" />
-    <p class="hero-date">13 · 07 · 2026</p>
-  </div>
+  <img src="./1000161307-removebg-preview.png" alt="Paolla e Paulo" class="hero-names-img" />
+  <p style="font-family: 'Cinzel'; letter-spacing: 0.3em; color: var(--dourado-claro);">13 · 07 · 2026</p>
 </section>
 
-<nav>
-  <ul>
-    <li><a href="#historia">História</a></li>
-    <li><a href="#cerimonia">Programação</a></li>
-    <li><a href="#traje">Traje</a></li>
-    <li><a href="#local">Local</a></li>
-  </ul>
-</nav>
-
-<section id="local" style="background: var(--marrom); color: var(--creme);">
-  <h2 class="sec-title">O <em>Local</em></h2>
-  <img src="1000161285-removebg-preview.png" alt="Casa Ville Verte" class="venue-house-img" />
-  <p style="font-style: italic; opacity: 0.7;">Casa Ville Verte · Teresópolis, RJ</p>
+<section id="local" style="background: var(--marrom); color: white;">
+  <h2 style="font-family: 'Cinzel';">O Local</h2>
+  <img src="./1000161285-removebg-preview.png" alt="Casa Ville Verte" class="venue-house-img" />
+  <p>Casa Ville Verte · Teresópolis, RJ</p>
 </section>
-
-<footer>
-  <img src="1000161307-removebg-preview.png" class="footer-sig" alt="Assinatura" />
-  <p style="color: var(--dourado-claro); font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.2em;">13 · 07 · 2026</p>
-</footer>
 
 </body>
 </html>

@@ -5,606 +5,366 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paolla & Paulo — 13.07.2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --marrom: #3B1A0E;
-      --marrom-claro: #6B3320;
-      --marrom-escuro: #1E0C06;
-      --creme: #F5EFE6;
-      --creme-escuro: #E8D9C5;
-      --dourado: #C9A96E;
+      --marrom:        #130706;
+      --marrom-medio:  #2A0F0C;
+      --marrom-claro:  #6B2D1A;
+      --creme:         #F3EBE0;
+      --creme-escuro:  #E2D0BB;
+      --dourado:       #C9A96E;
       --dourado-claro: #E8D4A8;
-      --branco: #FDFAF6;
+      --branco:        #FAF6F0;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    body { background: var(--branco); color: var(--marrom); font-family: 'Cormorant Garamond', serif; overflow-x: hidden; }
 
-    body {
-      background: var(--branco);
-      color: var(--marrom-escuro);
-      font-family: 'Cormorant Garamond', serif;
-      overflow-x: hidden;
-    }
-
-    /* ── ORNAMENT SVG ── */
-    .ornament {
-      display: block;
-      margin: 0 auto;
-      opacity: 0.55;
-    }
-
-    /* ── HERO ── */
+    /* HERO */
     #hero {
       min-height: 100vh;
-      background: var(--marrom-escuro);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 24px;
-      position: relative;
-      overflow: hidden;
+      background: var(--marrom);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 80px 24px 100px;
+      position: relative; overflow: hidden;
     }
-
     #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(107,66,38,0.5) 0%, transparent 70%);
+        radial-gradient(ellipse 70% 50% at 50% 10%, rgba(201,169,110,0.15) 0%, transparent 65%),
+        radial-gradient(ellipse 100% 40% at 50% 100%, rgba(61,24,16,0.8) 0%, transparent 70%);
     }
-
-    .hero-content { position: relative; z-index: 1; }
-
+    #hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'%3E%3Cpath fill='%23C9A96E' fill-opacity='0.10' d='M0,200 L0,150 Q80,70 160,110 Q220,140 280,55 Q340,0 400,38 Q460,75 520,25 Q580,0 640,45 Q700,85 760,18 Q820,0 880,50 Q940,95 1000,42 Q1060,8 1120,65 Q1180,115 1240,75 Q1300,38 1360,95 L1440,105 L1440,200Z'/%3E%3Cpath fill='%23C9A96E' fill-opacity='0.05' d='M0,200 L0,170 Q100,110 200,140 Q300,162 380,95 Q440,45 500,82 Q560,122 620,72 Q680,35 740,82 Q800,122 860,68 Q920,25 980,75 Q1040,115 1100,62 Q1160,25 1220,84 Q1300,132 1380,104 L1440,124 L1440,200Z'/%3E%3C/svg%3E") no-repeat bottom center / cover;
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; }
     .hero-pre {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(10px, 2vw, 13px);
-      letter-spacing: 0.35em;
-      color: var(--dourado);
-      text-transform: uppercase;
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: fadeUp 1s 0.3s forwards;
+      font-family: 'Cinzel', serif; font-size: clamp(9px,1.8vw,12px);
+      letter-spacing: 0.4em; color: var(--dourado); text-transform: uppercase;
+      margin-bottom: 28px; opacity: 0; animation: fadeUp 1s 0.3s forwards;
     }
-
     .hero-names {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(60px, 14vw, 130px);
-      font-weight: 300;
-      line-height: 0.9;
-      color: var(--creme);
-      letter-spacing: -0.01em;
-      opacity: 0;
-      animation: fadeUp 1.2s 0.6s forwards;
+      font-size: clamp(58px,13vw,124px); font-weight: 300;
+      line-height: 0.88; color: var(--creme);
+      opacity: 0; animation: fadeUp 1.2s 0.6s forwards;
     }
-
-    .hero-names em {
-      font-style: italic;
-      color: var(--dourado-claro);
-    }
-
-    .hero-ampersand {
-      display: block;
-      font-size: clamp(80px, 18vw, 160px);
-      color: var(--dourado);
-      line-height: 0.8;
-      font-style: italic;
-    }
-
-    .hero-divider {
-      width: 1px;
-      height: 80px;
+    .hero-names em { font-style: italic; color: var(--dourado-claro); }
+    .hero-amp { display: block; font-size: clamp(76px,16vw,148px); color: var(--dourado); font-style: italic; line-height: 0.82; }
+    .hero-rule {
+      width: 1px; height: 72px;
       background: linear-gradient(to bottom, transparent, var(--dourado), transparent);
-      margin: 36px auto;
-      opacity: 0;
-      animation: fadeIn 1s 1.2s forwards;
+      margin: 32px auto; opacity: 0; animation: fadeIn 1s 1.2s forwards;
     }
-
     .hero-date {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(14px, 3vw, 20px);
-      letter-spacing: 0.25em;
-      color: var(--dourado-claro);
-      opacity: 0;
-      animation: fadeUp 1s 1.4s forwards;
+      font-family: 'Cinzel', serif; font-size: clamp(13px,2.5vw,18px);
+      letter-spacing: 0.28em; color: var(--dourado-claro);
+      opacity: 0; animation: fadeUp 1s 1.4s forwards;
     }
-
-    .hero-location {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(14px, 2.5vw, 18px);
-      font-style: italic;
-      color: rgba(245,239,230,0.6);
-      margin-top: 10px;
-      opacity: 0;
-      animation: fadeUp 1s 1.6s forwards;
+    .hero-loc {
+      font-size: clamp(13px,2vw,16px); font-style: italic;
+      color: rgba(243,235,224,0.5); margin-top: 10px;
+      opacity: 0; animation: fadeUp 1s 1.6s forwards;
     }
-
+    .hero-verse {
+      margin-top: 36px; font-size: clamp(12px,1.8vw,14px);
+      font-style: italic; color: rgba(201,169,110,0.55);
+      max-width: 480px; line-height: 1.75;
+      opacity: 0; animation: fadeUp 1s 1.9s forwards;
+    }
     .scroll-hint {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--dourado);
-      opacity: 0.5;
-      animation: bounce 2s infinite;
-      font-size: 22px;
+      position: absolute; bottom: 28px; left: 50%;
+      transform: translateX(-50%); color: var(--dourado); opacity: 0.4; font-size: 20px;
+      animation: bounce 2.2s infinite; z-index: 2;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(62,32,15,0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(201,169,110,0.2);
-      padding: 0 24px;
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(30,10,8,0.97); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,169,110,0.15);
     }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: clamp(16px, 4vw, 48px);
-      list-style: none;
-      padding: 16px 0;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      font-family: 'Cinzel', serif;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      color: var(--dourado-claro);
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.3s;
-    }
-
+    nav ul { display: flex; justify-content: center; gap: clamp(10px,3vw,36px); list-style: none; padding: 14px 16px; flex-wrap: wrap; }
+    nav a { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.2em; color: var(--dourado-claro); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
     nav a:hover { color: var(--dourado); }
 
-    /* ── SECTIONS COMMON ── */
-    section {
-      padding: clamp(60px, 10vw, 120px) clamp(24px, 8vw, 80px);
+    /* SECTIONS */
+    section { padding: clamp(64px,10vw,116px) clamp(24px,8vw,100px); }
+    .sec-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.38em; color: var(--marrom-claro); text-transform: uppercase; text-align: center; margin-bottom: 14px; }
+    .sec-title { font-size: clamp(34px,5.5vw,58px); font-weight: 300; text-align: center; color: var(--marrom); line-height: 1.1; margin-bottom: 40px; }
+    .sec-title em { font-style: italic; color: var(--marrom-claro); }
+    .ornament { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 0 auto 40px; max-width: 320px; }
+    .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--dourado)); }
+    .ornament::after { background: linear-gradient(to left, transparent, var(--dourado)); }
+    .ornament span { color: var(--dourado); font-size: 17px; opacity: 0.65; }
+
+    /* CONTAGEM */
+    #contagem { background: var(--creme); text-align: center; }
+    .cd-grid { display: flex; justify-content: center; gap: clamp(12px,5vw,56px); flex-wrap: wrap; }
+    .cd-item { display: flex; flex-direction: column; align-items: center; }
+    .cd-num { font-size: clamp(54px,10vw,92px); font-weight: 300; color: var(--marrom); line-height: 1; }
+    .cd-lbl { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.32em; color: var(--marrom-claro); text-transform: uppercase; margin-top: 6px; }
+    .cd-sep { font-size: clamp(36px,6vw,64px); color: var(--dourado); opacity: 0.35; line-height: 1; align-self: flex-start; padding-top: 8px; }
+
+    /* HISTÓRIA */
+    #historia { background: var(--branco); }
+    .hist-text { font-size: clamp(17px,2.4vw,21px); line-height: 1.95; color: var(--marrom); text-align: center; font-style: italic; max-width: 700px; margin: 0 auto; opacity: 0.82; }
+
+    /* PROGRAMAÇÃO */
+    #cerimonia { background: var(--marrom); color: var(--creme); text-align: center; position: relative; overflow: hidden; }
+    #cerimonia::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 160px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160'%3E%3Cpath fill='%233D1810' fill-opacity='0.35' d='M0,160 L0,120 Q120,55 240,90 Q340,118 420,62 Q500,18 580,58 Q660,100 740,44 Q820,0 900,54 Q980,100 1060,48 Q1140,8 1220,64 L1440,82 L1440,160Z'/%3E%3C/svg%3E") no-repeat bottom center / cover;
+      pointer-events: none;
     }
-
-    .section-label {
-      font-family: 'Cinzel', serif;
-      font-size: 11px;
-      letter-spacing: 0.35em;
-      color: var(--marrom-claro);
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 16px;
+    #cerimonia .sec-label { color: var(--dourado); opacity: 0.7; }
+    #cerimonia .sec-title { color: var(--creme); }
+    #cerimonia .sec-title em { color: var(--dourado-claro); }
+    .timeline { position: relative; max-width: 460px; margin: 0 auto; padding-left: 44px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 12px; top: 8px; bottom: 8px; width: 1px;
+      background: repeating-linear-gradient(to bottom, var(--dourado) 0px, var(--dourado) 6px, transparent 6px, transparent 14px); opacity: 0.35;
     }
+    .tl-item { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 40px; position: relative; text-align: left; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot { position: absolute; left: -35px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--dourado); }
+    .tl-time { font-family: 'Cinzel', serif; font-size: 13px; color: var(--dourado); letter-spacing: 0.1em; white-space: nowrap; min-width: 52px; }
+    .tl-title { font-size: clamp(18px,3vw,22px); font-weight: 300; color: var(--creme); }
+    .tl-sub { font-size: 13px; font-style: italic; color: rgba(243,235,224,0.45); margin-top: 2px; }
 
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(36px, 6vw, 60px);
-      font-weight: 300;
-      text-align: center;
-      color: var(--marrom-escuro);
-      line-height: 1.1;
-      margin-bottom: 48px;
-    }
+    /* TRAJE */
+    #traje { background: var(--creme); text-align: center; }
+    .traje-grid { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .traje-card { border: 1px solid var(--creme-escuro); background: var(--branco); padding: 36px 28px; max-width: 280px; flex: 1; min-width: 220px; }
+    .traje-icon { font-size: 30px; margin-bottom: 14px; display: block; }
+    .traje-tipo { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.3em; color: var(--marrom-claro); text-transform: uppercase; margin-bottom: 12px; }
+    .traje-desc { font-size: 16px; font-style: italic; color: var(--marrom); line-height: 1.75; }
+    .traje-obs { margin-top: 32px; font-size: 15px; font-style: italic; color: var(--marrom-claro); max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.6; }
 
-    .section-title em {
-      font-style: italic;
-      color: var(--marrom-claro);
-    }
+    /* PRESENTES */
+    #presentes { background: var(--branco); text-align: center; }
+    .presentes-intro { font-size: clamp(16px,2.2vw,19px); font-style: italic; color: var(--marrom); line-height: 1.85; max-width: 560px; margin: 0 auto 40px; opacity: 0.82; }
+    .presentes-grid { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+    .presente-btn { display: inline-block; border: 1px solid var(--creme-escuro); padding: 22px 32px; text-decoration: none; transition: all 0.3s; min-width: 190px; }
+    .presente-btn:hover { background: var(--creme); border-color: var(--dourado); }
+    .presente-faixa { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.28em; color: var(--dourado); text-transform: uppercase; margin-bottom: 6px; }
+    .presente-valor { font-size: clamp(18px,2.8vw,24px); font-weight: 300; color: var(--marrom); }
 
-    /* ── COUNTDOWN ── */
-    #contagem {
-      background: var(--creme);
-      text-align: center;
-    }
+    /* CONFIRMAÇÃO */
+    #confirmacao { background: var(--creme); text-align: center; }
+    .rsvp-whats { font-size: clamp(14px,2vw,16px); font-style: italic; color: var(--marrom-claro); margin-bottom: 28px; line-height: 1.7; }
+    .rsvp-whats a { color: var(--marrom); }
+    .rsvp-form { max-width: 500px; margin: 0 auto; }
+    .rsvp-form input, .rsvp-form select { width: 100%; padding: 14px 18px; margin-bottom: 14px; border: 1px solid rgba(122,53,32,0.22); background: var(--branco); font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--marrom); outline: none; transition: border-color 0.3s; appearance: none; }
+    .rsvp-form input:focus, .rsvp-form select:focus { border-color: var(--marrom); }
+    .rsvp-btn { width: 100%; padding: 16px; background: var(--marrom); color: var(--dourado-claro); font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.3s; }
+    .rsvp-btn:hover { background: var(--marrom-medio); }
+    .rsvp-success { display: none; font-size: 19px; font-style: italic; color: var(--marrom); padding: 20px; }
 
-    .countdown-grid {
-      display: flex;
-      justify-content: center;
-      gap: clamp(16px, 5vw, 60px);
-      flex-wrap: wrap;
-    }
+    /* LOCAL */
+    #local { background: var(--marrom); color: var(--creme); text-align: center; }
+    #local .sec-label { color: var(--dourado); opacity: 0.7; }
+    #local .sec-title { color: var(--creme); }
+    #local .sec-title em { color: var(--dourado-claro); }
+    .address-box { display: inline-block; border: 1px solid rgba(201,169,110,0.22); padding: 36px 52px; margin-top: 8px; }
+    .address-box::before { content: ''; display: block; width: 40px; height: 1px; background: var(--dourado); margin: 0 auto 24px; opacity: 0.45; }
+    .address-name { font-family: 'Cinzel', serif; font-size: clamp(15px,2.5vw,20px); color: var(--dourado-claro); margin-bottom: 12px; }
+    .address-text { font-size: 16px; font-style: italic; color: rgba(243,235,224,0.55); line-height: 1.85; }
+    .map-link { display: inline-block; margin-top: 20px; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--dourado); text-decoration: none; border-bottom: 1px solid rgba(201,169,110,0.35); padding-bottom: 2px; transition: opacity 0.3s; }
+    .map-link:hover { opacity: 0.65; }
 
-    .countdown-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    /* FOOTER */
+    footer { background: var(--marrom); border-top: 1px solid rgba(201,169,110,0.1); text-align: center; padding: 52px 24px; }
+    .footer-names { font-size: clamp(26px,5vw,42px); font-style: italic; font-weight: 300; color: var(--dourado); margin-bottom: 10px; }
+    .footer-sub { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.28em; color: rgba(243,235,224,0.3); }
+    .footer-verse { margin-top: 24px; font-size: 13px; font-style: italic; color: rgba(201,169,110,0.3); max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.65; }
 
-    .countdown-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(56px, 10vw, 96px);
-      font-weight: 300;
-      color: var(--marrom);
-      line-height: 1;
-    }
-
-    .countdown-label {
-      font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      color: var(--marrom-claro);
-      text-transform: uppercase;
-      margin-top: 8px;
-    }
-
-    .countdown-sep {
-      font-size: clamp(40px, 7vw, 72px);
-      color: var(--dourado);
-      opacity: 0.4;
-      line-height: 1;
-      align-self: flex-start;
-      padding-top: 8px;
-    }
-
-    /* ── NOSSA HISTÓRIA ── */
-    #historia {
-      background: var(--branco);
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .historia-text {
-      font-size: clamp(17px, 2.5vw, 21px);
-      line-height: 1.9;
-      color: var(--marrom-escuro);
-      text-align: center;
-      font-style: italic;
-      opacity: 0.85;
-    }
-
-    .historia-text + .historia-text {
-      margin-top: 28px;
-    }
-
-    /* ── CERIMÔNIA ── */
-    #cerimonia {
-      background: var(--marrom-escuro);
-      color: var(--creme);
-      text-align: center;
-    }
-
-    #cerimonia .section-title {
-      color: var(--creme);
-    }
-
-    #cerimonia .section-title em {
-      color: var(--dourado-claro);
-    }
-
-    .event-cards {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .event-card {
-      border: 1px solid rgba(201,169,110,0.3);
-      padding: 40px 32px;
-      min-width: 240px;
-      max-width: 300px;
-      flex: 1;
-      position: relative;
-    }
-
-    .event-card::before {
-      content: '';
-      position: absolute;
-      top: -1px; left: 20px; right: 20px;
-      height: 2px;
-      background: linear-gradient(to right, transparent, var(--dourado), transparent);
-    }
-
-    .event-card-icon {
-      font-size: 28px;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .event-card-type {
-      font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 0.35em;
-      color: var(--dourado);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .event-card-time {
-      font-size: clamp(28px, 5vw, 40px);
-      font-weight: 300;
-      color: var(--creme);
-      margin-bottom: 8px;
-    }
-
-    .event-card-local {
-      font-size: 15px;
-      font-style: italic;
-      color: rgba(245,239,230,0.6);
-      line-height: 1.5;
-    }
-
-    /* ── CONFIRMAÇÃO ── */
-    #confirmacao {
-      background: var(--creme-escuro);
-      text-align: center;
-    }
-
-    .rsvp-form {
-      max-width: 520px;
-      margin: 0 auto;
-    }
-
-    .rsvp-form input,
-    .rsvp-form select {
-      width: 100%;
-      padding: 14px 18px;
-      margin-bottom: 16px;
-      border: 1px solid rgba(107,66,38,0.3);
-      background: var(--branco);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      color: var(--marrom-escuro);
-      outline: none;
-      transition: border-color 0.3s;
-      appearance: none;
-    }
-
-    .rsvp-form input:focus,
-    .rsvp-form select:focus {
-      border-color: var(--marrom);
-    }
-
-    .rsvp-btn {
-      width: 100%;
-      padding: 16px;
-      background: var(--marrom);
-      color: var(--dourado-claro);
-      font-family: 'Cinzel', serif;
-      font-size: 12px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .rsvp-btn:hover { background: var(--marrom-escuro); }
-
-    .rsvp-success {
-      display: none;
-      font-size: 20px;
-      font-style: italic;
-      color: var(--marrom);
-      padding: 24px;
-    }
-
-    /* ── MAPA / ENDEREÇO ── */
-    #local {
-      background: var(--branco);
-      text-align: center;
-    }
-
-    .address-box {
-      display: inline-block;
-      border: 1px solid var(--creme-escuro);
-      padding: 32px 48px;
-      margin-top: 8px;
-    }
-
-    .address-name {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(16px, 3vw, 22px);
-      color: var(--marrom);
-      margin-bottom: 12px;
-    }
-
-    .address-text {
-      font-size: 16px;
-      font-style: italic;
-      color: var(--marrom-claro);
-      line-height: 1.7;
-    }
-
-    .map-link {
-      display: inline-block;
-      margin-top: 20px;
-      font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--marrom);
-      text-decoration: none;
-      border-bottom: 1px solid var(--dourado);
-      padding-bottom: 2px;
-      transition: color 0.3s;
-    }
-
-    .map-link:hover { color: var(--marrom-claro); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--marrom-escuro);
-      text-align: center;
-      padding: 48px 24px;
-      color: rgba(245,239,230,0.4);
-    }
-
-    footer .footer-names {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 5vw, 42px);
-      font-style: italic;
-      font-weight: 300;
-      color: var(--dourado);
-      margin-bottom: 8px;
-    }
-
-    footer p {
-      font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 0.25em;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50%       { transform: translateX(-50%) translateY(8px); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes bounce { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(7px); } }
+    .reveal { opacity:0; transform:translateY(28px); transition: opacity 0.85s ease, transform 0.85s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
   </style>
 </head>
 <body>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section id="hero">
   <div class="hero-content">
     <p class="hero-pre">Celebração do Matrimônio</p>
     <h1 class="hero-names">
       <em>Paolla</em>
-      <span class="hero-ampersand">&</span>
+      <span class="hero-amp">&</span>
       Paulo
     </h1>
-    <div class="hero-divider"></div>
+    <div class="hero-rule"></div>
     <p class="hero-date">13 · 07 · 2026</p>
-    <p class="hero-location">Casa Ville Verte · Parque do Imbuí, 2815 · Teresópolis, RJ</p>
+    <p class="hero-loc">Casa Ville Verte · Teresópolis, RJ</p>
+    <p class="hero-verse">
+      "Para que todos vejam, e saibam, e considerem, e juntamente entendam<br>
+      que a mão do Senhor fez isto..." — Isaías 41:20
+    </p>
   </div>
   <div class="scroll-hint">↓</div>
 </section>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav>
   <ul>
     <li><a href="#contagem">Contagem</a></li>
     <li><a href="#historia">Nossa História</a></li>
-    <li><a href="#cerimonia">Cerimônia</a></li>
+    <li><a href="#cerimonia">Programação</a></li>
+    <li><a href="#traje">Traje</a></li>
+    <li><a href="#presentes">Presentes</a></li>
     <li><a href="#confirmacao">Confirmação</a></li>
     <li><a href="#local">Local</a></li>
   </ul>
 </nav>
 
-<!-- ── CONTAGEM REGRESSIVA ── -->
+<!-- CONTAGEM -->
 <section id="contagem">
-  <p class="section-label reveal">Faltam apenas</p>
-  <h2 class="section-title reveal">O grande dia <em>se aproxima</em></h2>
-  <div class="countdown-grid reveal">
-    <div class="countdown-item">
-      <span class="countdown-num" id="cd-dias">--</span>
-      <span class="countdown-label">Dias</span>
-    </div>
-    <span class="countdown-sep">·</span>
-    <div class="countdown-item">
-      <span class="countdown-num" id="cd-horas">--</span>
-      <span class="countdown-label">Horas</span>
-    </div>
-    <span class="countdown-sep">·</span>
-    <div class="countdown-item">
-      <span class="countdown-num" id="cd-min">--</span>
-      <span class="countdown-label">Minutos</span>
-    </div>
-    <span class="countdown-sep">·</span>
-    <div class="countdown-item">
-      <span class="countdown-num" id="cd-seg">--</span>
-      <span class="countdown-label">Segundos</span>
-    </div>
+  <p class="sec-label reveal">Faltam apenas</p>
+  <h2 class="sec-title reveal">O grande dia <em>se aproxima</em></h2>
+  <div class="ornament reveal"><span>❧</span></div>
+  <div class="cd-grid reveal">
+    <div class="cd-item"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Dias</span></div>
+    <span class="cd-sep">·</span>
+    <div class="cd-item"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Horas</span></div>
+    <span class="cd-sep">·</span>
+    <div class="cd-item"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Minutos</span></div>
+    <span class="cd-sep">·</span>
+    <div class="cd-item"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Segundos</span></div>
   </div>
 </section>
 
-<!-- ── NOSSA HISTÓRIA ── -->
-<section id="historia" style="max-width:100%; padding-left:clamp(24px,12vw,160px); padding-right:clamp(24px,12vw,160px);">
-  <p class="section-label reveal">Dois corações</p>
-  <h2 class="section-title reveal">Nossa <em>História</em></h2>
-  <p class="historia-text reveal">
-    Toda grande história de amor começa com um simples encontro — um olhar, um sorriso, uma conversa que parece não ter fim. A nossa não foi diferente.
+<!-- HISTÓRIA -->
+<section id="historia">
+  <p class="sec-label reveal">Dois corações</p>
+  <h2 class="sec-title reveal">Nossa <em>História</em></h2>
+  <div class="ornament reveal"><span>❧</span></div>
+  <p class="hist-text reveal">
+    ✦ Em breve compartilharemos nossa história com vocês. ✦
   </p>
-  <p class="historia-text reveal" style="margin-top:24px;">
-    Com o tempo, descobrimos que o melhor de cada dia era estar ao lado um do outro. Hoje, escolhemos eternizar esse amor e celebrá-lo com as pessoas que mais amamos.
-  </p>
-  <p class="historia-text reveal" style="margin-top:24px; font-size: clamp(22px,3.5vw,28px); color: var(--marrom);">
+  <p class="hist-text reveal" style="margin-top:24px; font-size:clamp(20px,3vw,26px); color:var(--marrom-claro);">
     Em 13 de julho de 2026, dizemos sim.
   </p>
 </section>
 
-<!-- ── CERIMÔNIA ── -->
+<!-- PROGRAMAÇÃO -->
 <section id="cerimonia">
-  <p class="section-label reveal" style="color: var(--dourado);">Programação</p>
-  <h2 class="section-title reveal">A <em>Celebração</em></h2>
-  <div class="event-cards">
-    <div class="event-card reveal">
-      <span class="event-card-icon">⛪</span>
-      <p class="event-card-type">Cerimônia</p>
-      <p class="event-card-time">11h30</p>
-      <p class="event-card-local">Início da cerimônia<br>Casa Ville Verte</p>
+  <p class="sec-label reveal">13 de Julho de 2026</p>
+  <h2 class="sec-title reveal">A <em>Celebração</em></h2>
+  <div class="ornament reveal" style="margin-bottom:48px;"><span style="color:var(--dourado);">❧</span></div>
+  <div class="timeline reveal">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">11h30</div>
+      <div>
+        <p class="tl-title">Início da Cerimônia</p>
+        <p class="tl-sub">Casa Ville Verte · Teresópolis, RJ</p>
+      </div>
     </div>
-    <div class="event-card reveal">
-      <span class="event-card-icon">🥂</span>
-      <p class="event-card-type">Festa</p>
-      <p class="event-card-time">13h00</p>
-      <p class="event-card-local">Início da festa<br>Casa Ville Verte</p>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">13h00</div>
+      <div>
+        <p class="tl-title">Início da Festa</p>
+        <p class="tl-sub">Recepção e celebração</p>
+      </div>
     </div>
-    <div class="event-card reveal">
-      <span class="event-card-icon">🌙</span>
-      <p class="event-card-type">Encerramento</p>
-      <p class="event-card-time">18h00</p>
-      <p class="event-card-local">Término da festa<br>Casa Ville Verte</p>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-time">18h00</div>
+      <div>
+        <p class="tl-title">Encerramento</p>
+        <p class="tl-sub">Até breve, com muito amor</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── CONFIRMAÇÃO ── -->
+<!-- TRAJE -->
+<section id="traje">
+  <p class="sec-label reveal">Dress Code</p>
+  <h2 class="sec-title reveal"><em>Traje</em> Recomendado</h2>
+  <div class="ornament reveal"><span>❧</span></div>
+  <div class="traje-grid">
+    <div class="traje-card reveal">
+      <span class="traje-icon">🤵</span>
+      <p class="traje-tipo">Ele</p>
+      <p class="traje-desc">Esporte fino com uso de <strong>blazer</strong> recomendado. O frio da serra merece elegância!</p>
+    </div>
+    <div class="traje-card reveal">
+      <span class="traje-icon">👗</span>
+      <p class="traje-tipo">Ela</p>
+      <p class="traje-desc">Esporte fino. Recomendamos <strong>stolas, pashminas e xales</strong> pelo frio do inverno serrano.</p>
+    </div>
+  </div>
+  <p class="traje-obs reveal" style="margin-top:32px;">
+    🌿 Por gentileza, evitar roupas nas cores <strong>branco</strong> e <strong>marrom</strong>.
+  </p>
+</section>
+
+<!-- PRESENTES -->
+<section id="presentes">
+  <p class="sec-label reveal">Com carinho</p>
+  <h2 class="sec-title reveal">Lista de <em>Presentes</em></h2>
+  <div class="ornament reveal"><span>❧</span></div>
+  <p class="presentes-intro reveal">
+    Sua presença já é o maior presente. Mas se quiser nos presentear, preparamos uma lista especial dividida por faixas de valores.
+  </p>
+  <div class="presentes-grid reveal">
+    <a href="#" class="presente-btn">
+      <p class="presente-faixa">Faixa 1</p>
+      <p class="presente-valor">Até R$ 100</p>
+    </a>
+    <a href="#" class="presente-btn">
+      <p class="presente-faixa">Faixa 2</p>
+      <p class="presente-valor">R$ 100 – R$ 300</p>
+    </a>
+    <a href="#" class="presente-btn">
+      <p class="presente-faixa">Faixa 3</p>
+      <p class="presente-valor">R$ 300 – R$ 600</p>
+    </a>
+    <a href="#" class="presente-btn">
+      <p class="presente-faixa">Faixa 4</p>
+      <p class="presente-valor">Acima de R$ 600</p>
+    </a>
+  </div>
+  <p class="traje-obs reveal" style="margin-top:28px;">Em breve os links estarão disponíveis aqui. 🎁</p>
+</section>
+
+<!-- CONFIRMAÇÃO -->
 <section id="confirmacao">
-  <p class="section-label reveal">Sua presença é especial</p>
-  <h2 class="section-title reveal">Confirme sua <em>Presença</em></h2>
-  <p class="historia-text reveal" style="font-size:clamp(15px,2vw,17px); margin-bottom:32px; max-width:500px; margin-left:auto; margin-right:auto;">
+  <p class="sec-label reveal">Sua presença é especial</p>
+  <h2 class="sec-title reveal">Confirme sua <em>Presença</em></h2>
+  <div class="ornament reveal"><span>❧</span></div>
+  <p class="rsvp-whats reveal">
     Confirme sua presença até o dia <strong>13 de maio</strong> pelo WhatsApp:<br>
-    <a href="https://wa.me/5521264160001" style="color:var(--marrom); font-style:normal;">(21) 2641-6001</a>
+    <a href="https://wa.me/552126416001">(21) 2641-6001</a>
   </p>
   <div class="rsvp-form reveal">
     <input type="text" id="rsvp-nome" placeholder="Seu nome completo" />
     <input type="text" id="rsvp-acomp" placeholder="Nome do acompanhante (se houver)" />
-    <select id="rsvp-confirm">
+    <select id="rsvp-sel">
       <option value="">Confirmar presença?</option>
       <option value="sim">Sim, estarei lá! 🎉</option>
       <option value="nao">Infelizmente não poderei comparecer</option>
     </select>
-    <button class="rsvp-btn" onclick="enviarRSVP()">Confirmar presença</button>
-    <p class="rsvp-success" id="rsvp-success"></p>
+    <button class="rsvp-btn" onclick="enviarRSVP()">Confirmar Presença</button>
+    <p class="rsvp-success" id="rsvp-msg"></p>
   </div>
 </section>
 
-<!-- ── LOCAL ── -->
+<!-- LOCAL -->
 <section id="local">
-  <p class="section-label reveal">Como chegar</p>
-  <h2 class="section-title reveal">O <em>Local</em></h2>
-  <p class="historia-text reveal" style="font-style:italic; font-size:clamp(15px,2vw,18px); color:var(--marrom-claro); margin-bottom:32px; max-width:600px; margin-left:auto; margin-right:auto;">
-    "Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão do Senhor fez isto..." — Isaías 41:20
-  </p>
+  <p class="sec-label reveal">Como chegar</p>
+  <h2 class="sec-title reveal">O <em>Local</em></h2>
+  <div class="ornament reveal" style="margin-bottom:40px;"><span style="color:var(--dourado);opacity:0.6;">❧</span></div>
   <div class="reveal">
     <div class="address-box">
       <p class="address-name">Casa Ville Verte</p>
@@ -620,54 +380,46 @@
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
   <p class="footer-names">Paolla & Paulo</p>
-  <p>13 · 07 · 2026 &nbsp;·&nbsp; Teresópolis, RJ</p>
+  <p class="footer-sub">13 · 07 · 2026 &nbsp;·&nbsp; Teresópolis, RJ</p>
+  <p class="footer-verse">
+    "Para que todos vejam, e saibam, e considerem, e juntamente entendam<br>
+    que a mão do Senhor fez isto..." — Isaías 41:20
+  </p>
 </footer>
 
 <script>
-  // Countdown
-  function updateCountdown() {
-    const wedding = new Date('2026-07-13T11:30:00');
-    const now = new Date();
-    const diff = wedding - now;
-    if (diff <= 0) {
-      document.getElementById('cd-dias').textContent = '0';
-      document.getElementById('cd-horas').textContent = '0';
-      document.getElementById('cd-min').textContent = '0';
-      document.getElementById('cd-seg').textContent = '0';
-      return;
-    }
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    document.getElementById('cd-dias').textContent = String(d).padStart(2,'0');
-    document.getElementById('cd-horas').textContent = String(h).padStart(2,'0');
-    document.getElementById('cd-min').textContent = String(m).padStart(2,'0');
-    document.getElementById('cd-seg').textContent = String(s).padStart(2,'0');
+  function tick() {
+    const diff = new Date('2026-07-13T11:30:00') - new Date();
+    if (diff <= 0) { ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '00'); return; }
+    const p = n => String(n).padStart(2,'0');
+    document.getElementById('cd-d').textContent = p(Math.floor(diff/86400000));
+    document.getElementById('cd-h').textContent = p(Math.floor(diff%86400000/3600000));
+    document.getElementById('cd-m').textContent = p(Math.floor(diff%3600000/60000));
+    document.getElementById('cd-s').textContent = p(Math.floor(diff%60000/1000));
   }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  tick(); setInterval(tick, 1000);
 
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.15 });
-  reveals.forEach(r => observer.observe(r));
+  new IntersectionObserver(
+    entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+    { threshold: 0.12 }
+  ).observe || document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver(([e]) => e.isIntersecting && e.target.classList.add('visible'), { threshold: 0.12 }).observe(el);
+  });
+  document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver(([e]) => e.isIntersecting && e.target.classList.add('visible'), { threshold: 0.12 }).observe(el);
+  });
 
-  // RSVP
   function enviarRSVP() {
     const nome = document.getElementById('rsvp-nome').value.trim();
-    const confirm = document.getElementById('rsvp-confirm').value;
-    if (!nome || !confirm) { alert('Por favor, preencha seu nome e confirmação.'); return; }
-    const msg = confirm === 'sim'
+    const sel  = document.getElementById('rsvp-sel').value;
+    if (!nome || !sel) { alert('Por favor, preencha seu nome e confirmação.'); return; }
+    document.getElementById('rsvp-msg').textContent = sel === 'sim'
       ? `Que alegria, ${nome}! Sua presença está confirmada. Até lá! 🥂`
       : `Obrigado por nos avisar, ${nome}. Você fará falta!`;
-    document.getElementById('rsvp-success').textContent = msg;
-    document.getElementById('rsvp-success').style.display = 'block';
+    document.getElementById('rsvp-msg').style.display = 'block';
     document.querySelector('.rsvp-btn').style.display = 'none';
   }
 </script>
